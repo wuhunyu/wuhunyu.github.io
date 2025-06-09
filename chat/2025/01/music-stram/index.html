@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>自建音乐流媒体的碎碎念 - wuhunyu|blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="wuhunyu"><meta name="msapplication-TileImage" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="wuhunyu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="72x72" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="96x96" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="128x128" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="256x256" href="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="自建音乐流媒体的碎碎念"><meta property="og:url" content="https://wuhunyu.top/chat/2025/01/music-stram/index.html"><meta property="og:site_name" content="wuhunyu"><meta property="og:description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta property="article:published_time" content="2025-01-15T15:20:00.000Z"><meta property="article:modified_time" content="2025-06-09T06:22:56.645Z"><meta property="article:author" content="wuhunyu"><meta property="article:tag" content="音乐流媒体"><meta property="article:tag" content="自建"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://static.wuhunyu.top/images/avatar-compress.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wuhunyu.top"},"headline":"有志者，事竟成","image":["https://static.wuhunyu.top/images/avatar-compress.png"],"datePublished":"2025-01-15T15:20:00.000Z","dateModified":"2025-06-09T06:22:56.645Z","author":{"@type":"Person","name":"wuhunyu"},"publisher":{"@type":"Organization","name":"wuhunyu|blog","logo":{"@type":"ImageObject","url":{"text":"wuhunyu"}}},"description":"你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"}</script><link rel="canonical" href="https://wuhunyu.top/chat/2025/01/music-stram/index.html"><link rel="icon" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/customer.css"><link rel="stylesheet" href="/font/iconfont.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">wuhunyu</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/wuhunyu"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-10-tablet is-10-desktop is-10-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://static.wuhunyu.top/images/2025/01/f9b27dbe3285022c47ef8f061f504a87.jpg" alt="自建音乐流媒体的碎碎念"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-01-15T15:20:00.000Z" title="1/15/2025, 3:20:00 PM">2025-01-15</time>发表</span><span class="level-item"><time dateTime="2025-06-09T06:22:56.645Z" title="6/9/2025, 6:22:56 AM">2025-06-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a></span><span class="level-item">20 分钟读完 (大约2956个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">自建音乐流媒体的碎碎念</h1><div class="content"><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>首先谈谈我对<strong>音乐</strong>，以及<strong>流媒体</strong>的理解</p>
+<p>我对音乐的狭义理解是：由乐器弹奏，或者人哼唱出来的歌。对于流媒体，我认为在网络上传播的影像记录就是流媒体</p>
+<span id="more"></span>
+
+<p>现在我们来看看维基百科给它们的定义</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E4%B9%90">音乐</a>，广义而言，就是指任何以声音组成的艺术。英文Music一词源于古希腊语的μουσική（mousike），意即缪斯（muse）女神的艺术。而中文的音乐二字，东汉许慎《说文解字》解释为“音，声也。生于心，有节于外，谓之音。”认为音乐和声音的区别，在于音乐需要透过人心去想像和创造。</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AA%92%E4%BD%93">流媒体</a>（英语：Streaming media），指将一连串的多媒体资料压缩后，经过互联网分段发送资料，在互联网上即时传输影音以供观赏的一种技术与过程，此技术使得资料数据包得以像流水一样发送，如果不使用此技术，就必须在使用前下载整个媒体文件。</p>
+</blockquote>
+<p>除此之外，我在 <a target="_blank" rel="noopener" href="https://music.aqzscn.cn/">音流</a> 这款软件的文档上，看到了一段这样的说明</p>
+<p><img src="https://static.wuhunyu.top/images/2025/01/9d3e7b614de88998da0eb9ac8fdccd49.png" alt="音流-基本要求"></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E9%99%84%E6%8E%A5%E5%AD%98%E5%82%A8">网络附接存储</a>（英语：Network Attached Storage，缩写：NAS）是一种文件级（与块级存储相对）的计算机数据存储服务器，它连接到计算机网络，并提供对异构网络用户的数据访问。它专门用于通过其硬件、软件或配置来提供文件服务。它通常作为专门制造的专用计算机设备制造。 NAS系统是包含一个或多个通常排列成逻辑存储器、冗余存储器或RAID存储驱动器的网络设备。NAS消除了从网络上的其他服务器提供文件服务的负担，它们通常使用网络文件共享协议（如NFS、SMB或AFP）提供对文件的访问。作为一种在多台计算机之间共享文件的便捷方法，NAS设备从1990年代中期开始开始流行起来。与同样提供文件服务的通用服务器相比，专用网络附加存储的潜在优势包括更快的数据访问、更简单的管理和简单的配置。</p>
+</blockquote>
+<p>我知道自建音乐流媒体是一个小众的需求，不过搭建一个音乐流媒体平台不需要借助 NAS 也是可行的，因为我观察到较为主流的开源流媒体服务都是支持 Docker 部署的</p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>起初我是没有想要自建流媒体服务的，那时我对一款音乐播放器的需求是这样的</p>
+<ol>
+<li>功能单一，只需要有基本的播放，收藏，查看歌词，歌手封面</li>
+<li>有云盘功能，支持移动客户端上传音乐</li>
+<li>没有广告（不充会员的情况）</li>
+</ol>
+<p>我还在用的两款音乐软件，<strong>酷狗</strong>，<strong>网易云音乐</strong>都是无法满足第一点和第三点的，而且我以前根本不敢想的弹窗广告和摇一摇广告竟然都出现了。以至于很长一段时间内，我都是使用<strong>Bilibili</strong>来听视频，反正我这个木耳朵也听不出来区别</p>
+<p>24 年<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/">阮一峰</a>的博客推荐了一个音乐流媒体服务，现在尝试找了找，没找到当时的那篇博客。当时我尝试安装了试用了一下，原本以为它能像是一个只拥有播放，网盘功能的酷狗音乐。结果登录Web页面之后，什么都没有。现在想起来，是需要我先把音乐文件喂给它，它只负责读取然后播放。当时觉得这个东西根本没法用，就放弃了</p>
+<p>最近刷到了一篇文章，问大家都用的什么音乐播放器。里面有人回答，Apple Music，Spotify，网易云音乐。使用 Apple Music 的用户觉得没广告音质好，推荐Spotify的用户说曲库全还免费，还在用网易云音乐的用户说自己是永久会员</p>
+<ul>
+<li><p>就我个人而言，Apple Music 我也用过，周杰伦的歌也有，但我搜索进击的巨人时，给出的列表没有网易云音乐那样丰富</p>
+</li>
+<li><p>Spotify 我记得是有广告的，它是在听歌的间隙插入音频广告。也因为是国外设计的软件，用起来不习惯就放弃了。因为我听歌一般只认歌名和歌手，什么专辑对我而言是多余的东西</p>
+</li>
+<li><p>至于网易云音乐，广告以及功能太杂了，我觉得音乐播放器不应该这么臃肿</p>
+</li>
+</ul>
+<p>在众多的评论中，我看到有些人回复了一些我没听过的名字，这个 <strong>音流</strong> 就是其中之一</p>
+<p>搜索了一下 <strong>音流</strong>，提供四端应用（Mac，Windows，Android，iOS）。看官网给出的截图也挺纯净简洁，勾起了我自建音乐流媒体的兴趣</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>需要说明的是，我们经常说的<strong>网易云音乐</strong>，<strong>Apple Music</strong>它们只是一个音频播放器客户端，真正大量保存音乐资源的都是在服务器上，<strong>网易云音乐</strong>有<strong>网易云音乐</strong>的服务器，<strong>Apple Music</strong>也有<strong>Apple Music</strong>的服务器，这样做才能让我们在移动终端上不需要下载也能听到音乐传作者们发布的歌曲</p>
+<p>那么需要自建音乐平台，至少也要有一个服务端和一个终端。如果把这个服务端类比成<strong>网易云音乐</strong>的服务器，终端类比成<strong>网易云音乐</strong>的手机 app 或者电脑端的 app，应该会更形象一些</p>
+<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p>先确定了终端使用 <strong>音流</strong> 这款软件，那么就要看看音流这款移动终端它适配了哪些服务。这是 <strong>音流</strong> 官网给的适配功能对比</p>
+<blockquote>
+<p>第一行是各个流媒体服务的名称</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">Subsonic</th>
+<th align="left">Navidrome</th>
+<th align="left">Audio Station</th>
+<th align="left">Emby</th>
+<th align="left">Jellyfin</th>
+<th align="left">Plex</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>内嵌歌词</strong></td>
+<td align="left">-</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>外置歌词</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>在线歌词</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>歌手简介</strong></td>
+<td align="left">-</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>歌手头像</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>多艺术家</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left">-</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>回放增益</strong></td>
+<td align="left">-</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>评分功能</strong></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>收藏功能</strong></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>文件夹</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left"></td>
+<td align="left">√</td>
+</tr>
+<tr>
+<td align="left"><strong>删除接口</strong></td>
+<td align="left">-</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+</tbody></table>
+<p>这是各个流媒体服务的特性对比</p>
+<table>
+<thead>
+<tr>
+<th>特性&#x2F;平台</th>
+<th><strong>Subsonic</strong></th>
+<th><strong>Navidrome</strong></th>
+<th><strong>Audio Station</strong></th>
+<th><strong>Emby</strong></th>
+<th><strong>Jellyfin</strong></th>
+<th><strong>Plex</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>定位</strong></td>
+<td>音乐流媒体服务器</td>
+<td>轻量级音乐服务器</td>
+<td>Synology 专属音频服务</td>
+<td>多媒体服务器</td>
+<td>多媒体服务器</td>
+<td>多媒体服务器</td>
+</tr>
+<tr>
+<td><strong>开源</strong></td>
+<td>部分开源</td>
+<td>开源（GPL-3.0）</td>
+<td>闭源</td>
+<td>部分开源</td>
+<td>开源（GPL-2.0）</td>
+<td>闭源</td>
+</tr>
+<tr>
+<td><strong>支持的媒体类型</strong></td>
+<td>仅音频</td>
+<td>仅音频</td>
+<td>仅音频</td>
+<td>音频、视频、图片</td>
+<td>音频、视频、图片</td>
+<td>音频、视频、图片</td>
+</tr>
+<tr>
+<td><strong>跨平台支持</strong></td>
+<td>是</td>
+<td>是</td>
+<td>否（仅 Synology NAS）</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>客户端支持</strong></td>
+<td>多种（Web、手机应用）</td>
+<td>Web、手机应用</td>
+<td>手机应用、浏览器</td>
+<td>多种（Web、应用）</td>
+<td>多种（Web、应用）</td>
+<td>多种（Web、应用）</td>
+</tr>
+<tr>
+<td><strong>多用户支持</strong></td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>离线下载</strong></td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>流媒体转码支持</strong></td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>字幕支持</strong></td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>多设备同步</strong></td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>免费使用</strong></td>
+<td>部分功能</td>
+<td>完全免费</td>
+<td>包含于 Synology</td>
+<td>部分功能免费</td>
+<td>完全免费</td>
+<td>部分功能免费</td>
+</tr>
+<tr>
+<td><strong>高级功能付费</strong></td>
+<td>是</td>
+<td>否</td>
+<td>不适用</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td><strong>活跃社区</strong></td>
+<td>较小</td>
+<td>较小</td>
+<td>专注于 Synology 用户群体</td>
+<td>较大</td>
+<td>较大</td>
+<td>较大</td>
+</tr>
+<tr>
+<td><strong>硬件需求</strong></td>
+<td>较低</td>
+<td>较低</td>
+<td>依赖 Synology NAS</td>
+<td>中等</td>
+<td>中等</td>
+<td>中等</td>
+</tr>
+<tr>
+<td><strong>Docker 支持</strong></td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<p>我说说我的看法</p>
+<p><strong>Subsonic</strong> 算是老牌的流媒体服务了，后续很多的流媒体服务都是基于 <strong>Subsonic</strong> 的 api 开发的，不过 <strong>Subsonic</strong> 基于 Java 开发的，资源消耗也会大一点，而且对我来说，它的功能有点复杂了</p>
+<p><strong>Navidrome</strong> 是使用 Go 开发的，完全开源，在网上也看见了不少朋友在推荐，也满足我的基本要求，除了上传音乐的功能</p>
+<p><strong>Audio Station</strong> 就不说了，我需要一个能 Docker 部署的服务</p>
+<p>另外三个我没实际安装体验过就不发表意见了</p>
+<p>除了上面的六个流媒体服务器之外，基于上传的需求，我找到了 <a target="_blank" rel="noopener" href="https://github.com/airsonic-advanced/airsonic-advanced">airsonic-advanced</a>，一个基于 <strong>Subsonic</strong> 开发的流媒体服务器，也支持上传</p>
+<p><img src="https://static.wuhunyu.top/images/2025/01/083f3afe250aa528b3e50d97dbc86aa6.png" alt="airsonic-advanced 首页"></p>
+<p>不知道大家会不会觉得功能太复杂了，实际安装之后我觉得有些复杂了，自用的系统不需要这么多功能</p>
+<p>那么最终就选定 <strong>Navidrome</strong> 了，开干</p>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>基于 <a target="_blank" rel="noopener" href="https://www.navidrome.org/docs/installation">Navidrome 的安装文档</a>，很快都能配置完毕，以下是我的 docker compose 配置，仅供参考</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">navidrome:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">deluan/navidrome:0.54.3</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">navidrome</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">user:</span> <span class="number">1000</span><span class="string">:1000</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">music</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">ND_SCANSCHEDULE:</span> <span class="string">1h</span></span><br><span class="line">      <span class="attr">ND_LOGLEVEL:</span> <span class="string">info</span></span><br><span class="line">      <span class="attr">ND_SESSIONTIMEOUT:</span> <span class="string">24h</span></span><br><span class="line">      <span class="attr">ND_DEFAULTLANGUAGE:</span> <span class="string">zh-Hans</span></span><br><span class="line">      <span class="attr">ND_ENABLETRANSCODINGCONFIG:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">~/applications/music/data:/data</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">~/applications/music/music:/music:ro</span></span><br><span class="line">  <span class="attr">lrcapi:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">hisatri/lrcapi:1.5.7</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">lrcapi</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">music</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">navidrome</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">API_AUTH=xxx</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">~/applications/music/music:/music</span></span><br><span class="line">  <span class="attr">route-music:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:latest</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">route-music</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3312</span><span class="string">:3312</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">music</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">navidrome</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">lrcapi</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">~/applications/music/nginx/nginx.conf:/etc/nginx/nginx.conf:ro</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">~/applications/music/nginx/logs:/opt/nginx/logs</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">music:</span></span><br><span class="line">    <span class="attr">driver:</span> <span class="string">bridge</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/HisAtri/LrcApi">hisatri&#x2F;lrcapi</a>:1.5.7：是一个补充服务，用于弥补 Navidrome 无法提供歌词和封面的缺陷</p>
+</blockquote>
+<h4 id="上传音乐"><a href="#上传音乐" class="headerlink" title="上传音乐"></a>上传音乐</h4><p><strong>自建的流媒体是没有任何音乐的，需要手动上传到流媒体服务器上</strong>。这也是我期望有上传功能的原因，但上传并没有在 <strong>Subsonic</strong> 的 api 中</p>
+<p>我目前是通过 <strong>SFTP</strong> 上传到服务器的。我的听歌范围变化不那么频繁，这一步虽然麻烦但还能接受</p>
+<h4 id="成果展示"><a href="#成果展示" class="headerlink" title="成果展示"></a>成果展示</h4><p><img src="https://static.wuhunyu.top/images/2025/01/f53b942d1d60d1ae2e0d9b310f444cfc.png" alt="Navidrome 首页"></p>
+<p><img src="https://static.wuhunyu.top/images/2025/01/2080b64bba80be8f2eebc88868bed622.jpg" alt="音流-主页"></p>
+<p><img src="https://static.wuhunyu.top/images/2025/01/0cd4820eaff90c84cd0c655ef5ae0ce9.jpg" alt="音流-列表"></p>
+<p><img src="https://static.wuhunyu.top/images/2025/01/cd18b535764919120fcc0d70c4827aa3.jpg" alt="音流-歌词"></p>
+<h4 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h4><p>首先 <strong>音流</strong> 确实很简洁，没有任何广告，基本功能除了一个上传也够我用</p>
+<p>其它一些缺点在于，<strong>Navidrome</strong> 流媒体服务安装在我家里，网络延迟有点大，有时候会出现歌词加载不及时的问题。至于听歌本身我感觉下来还是没什么问题的，主要还是因为我的歌曲大都都是 128k 音质的，大小在 5MB 以内</p>
+<p>如此如此~~</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>自建音乐流媒体的碎碎念</p><p><a href="https://wuhunyu.top/chat/2025/01/music-stram/index.html">https://wuhunyu.top/chat/2025/01/music-stram/index.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>wuhunyu</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2025-01-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2025-06-09</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9F%B3%E4%B9%90%E6%B5%81%E5%AA%92%E4%BD%93/">音乐流媒体</a><a class="link-muted mr-2" rel="tag" href="/tags/%E8%87%AA%E5%BB%BA/">自建</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://wuhunyu.top" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/ai/rag/2025/06/langchain4j-rag-example/index.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">基于 langchain4j 的简易 RAG</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/travel/guide/lushan-mountain/index.html"><span class="level-item">庐山旅游规划（待完善）</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-2-tablet is-2-desktop is-2-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://static.wuhunyu.top/images/avatar-compress.png" alt="wuhunyu"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">wuhunyu</p><p class="is-size-6 is-block">有志者，事竟成</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>🐱喵星🐱</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">226</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">85</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/wuhunyu" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/wuhunyu"><i class="iconfont icon-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="LeetCode" href="https://leetcode.cn/u/wuhunyu"><i class="iconfont icon-likou"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wuhunyu@gmail.com"><i class="iconfont icon-a-031mail2"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">1</span><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#需求"><span class="level-left"><span class="level-item">2</span><span class="level-item">需求</span></span></a></li><li><a class="level is-mobile" href="#说明"><span class="level-left"><span class="level-item">3</span><span class="level-item">说明</span></span></a></li><li><a class="level is-mobile" href="#对比"><span class="level-left"><span class="level-item">4</span><span class="level-item">对比</span></span></a></li><li><a class="level is-mobile" href="#部署"><span class="level-left"><span class="level-item">5</span><span class="level-item">部署</span></span></a></li><li><a class="level is-mobile" href="#上传音乐"><span class="level-left"><span class="level-item">6</span><span class="level-item">上传音乐</span></span></a></li><li><a class="level is-mobile" href="#成果展示"><span class="level-left"><span class="level-item">7</span><span class="level-item">成果展示</span></span></a></li><li><a class="level is-mobile" href="#体验"><span class="level-left"><span class="level-item">8</span><span class="level-item">体验</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/ai/rag/2025/06/langchain4j-rag-example/index.html"><img src="https://static.wuhunyu.top/images/2025/06/4e8835c57cda0b11d5ea4c282083fdab.svg" alt="基于 langchain4j 的简易 RAG"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-06-09T02:14:00.000Z">2025-06-09</time></p><p class="title"><a href="/ai/rag/2025/06/langchain4j-rag-example/index.html">基于 langchain4j 的简易 RAG</a></p><p class="categories"><a href="/categories/ai/">ai</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/chat/2025/01/music-stram/index.html"><img src="https://static.wuhunyu.top/images/2025/01/f9b27dbe3285022c47ef8f061f504a87.jpg" alt="自建音乐流媒体的碎碎念"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-01-15T15:20:00.000Z">2025-01-15</time></p><p class="title"><a href="/chat/2025/01/music-stram/index.html">自建音乐流媒体的碎碎念</a></p><p class="categories"><a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-16T08:58:00.000Z">2024-11-16</time></p><p class="title"><a href="/travel/guide/lushan-mountain/index.html">庐山旅游规划（待完善）</a></p><p class="categories"><a href="/categories/%E6%97%85%E6%B8%B8/">旅游</a> / <a href="/categories/%E6%97%85%E6%B8%B8/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/">路线规划</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-09-05T15:17:00.000Z">2024-09-05</time></p><p class="title"><a href="/chat/2024/09/cost/index.html">2024年年中消费简述</a></p><p class="categories"><a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/leetcode/2024/08/special-array-ii/index.html"><img src="https://static.leetcode.cn/cn-frontendx-assets/production/_next/static/images/logo-dark-c96c407d175e36c81e236fcfdd682a0b.png" alt="3152. 特殊数组 II"></a></figure><div class="media-content"><p class="date"><time dateTime="2024-08-14T11:38:00.000Z">2024-08-14</time></p><p class="title"><a href="/leetcode/2024/08/special-array-ii/index.html">3152. 特殊数组 II</a></p><p class="categories"><a href="/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">LeetCode每日一题</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Docker-Hub/"><span class="level-start"><span class="level-item">Docker Hub</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/GitHub-Actions/"><span class="level-start"><span class="level-item">GitHub Actions</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><span class="level-start"><span class="level-item">LeetCode每日一题</span></span><span class="level-end"><span class="level-item tag">208</span></span></a></li><li><a class="level is-mobile" href="/categories/MyBatis/"><span class="level-start"><span class="level-item">MyBatis</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ai/"><span class="level-start"><span class="level-item">ai</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/jvm/"><span class="level-start"><span class="level-item">jvm</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/mongodb/"><span class="level-start"><span class="level-item">mongodb</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%97%85%E6%B8%B8/"><span class="level-start"><span class="level-item">旅游</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%97%85%E6%B8%B8/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/"><span class="level-start"><span class="level-item">路线规划</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/%E7%A0%B4%E8%A7%A3/"><span class="level-start"><span class="level-item">破解</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"><span class="level-start"><span class="level-item">碎碎念</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9D%A2%E7%BB%8F/"><span class="level-start"><span class="level-item">面经</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DataGrip/"><span class="tag">DataGrip</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dijkstra-%E7%AE%97%E6%B3%95/"><span class="tag">Dijkstra 算法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker-Hub/"><span class="tag">Docker Hub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub-Actions/"><span class="tag">GitHub Actions</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GoLand/"><span class="tag">GoLand</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IntelliJ-IDEA/"><span class="tag">IntelliJ IDEA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JetBrains-%E5%85%A8%E5%AE%B6%E6%A1%B6/"><span class="tag">JetBrains 全家桶</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-%E9%87%8C%E7%A8%8B%E7%A2%91/"><span class="tag">LeetCode 里程碑</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MyBatis/"><span class="tag">MyBatis</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo mb-2" href="/">wuhunyu · <a href="http://beian.miit.gov.cn/" target="_blank" style="display: inline-block">赣ICP备2022010426号</a></a><a class="is-block" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36070302361043" target="_blank">赣公网安备 36070302361043号</a><p class="is-size-7"><span class="is-size-7">© 2025 wuhunyu</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
