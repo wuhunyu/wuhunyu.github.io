@@ -11416,6 +11416,11 @@ figure.highlight.foldable div.level-left {
     display: block;
   }
 }
+.menu-list a {
+  display: inline-block;
+  vertical-align: top;
+  word-break: break-all;
+}
 .donate {
   position: relative;
 }
