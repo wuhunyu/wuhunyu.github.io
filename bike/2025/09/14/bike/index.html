@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>自组折叠自行车 - wuhunyu|blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="wuhunyu"><meta name="msapplication-TileImage" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="wuhunyu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="72x72" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="96x96" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="128x128" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="256x256" href="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="自组折叠自行车"><meta property="og:url" content="https://wuhunyu.top/bike/2025/09/14/bike/index.html"><meta property="og:site_name" content="wuhunyu"><meta property="og:description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta property="article:published_time" content="2025-09-14T03:08:00.000Z"><meta property="article:modified_time" content="2025-09-14T03:08:00.000Z"><meta property="article:author" content="wuhunyu"><meta property="article:tag" content="自组"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://static.wuhunyu.top/images/avatar-compress.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wuhunyu.top"},"headline":"有志者，事竟成","image":["https://static.wuhunyu.top/images/avatar-compress.png"],"datePublished":"2025-09-14T03:08:00.000Z","dateModified":"2025-09-14T03:08:00.000Z","author":{"@type":"Person","name":"wuhunyu"},"publisher":{"@type":"Organization","name":"wuhunyu|blog","logo":{"@type":"ImageObject","url":{"text":"wuhunyu"}}},"description":"你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"}</script><link rel="canonical" href="https://wuhunyu.top/bike/2025/09/14/bike/index.html"><link rel="icon" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/customer.css"><link rel="stylesheet" href="/font/iconfont.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">wuhunyu</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/wuhunyu"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-10-tablet is-10-desktop is-10-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://static.wuhunyu.top/images/2025/09/a2767e93ec0e65298e832c5f726dcb31.jpg" alt="自组折叠自行车"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-09-14T03:08:00.000Z" title="9/14/2025, 3:08:00 AM">2025-09-14</time>发表</span><span class="level-item"><time dateTime="2025-09-14T03:08:00.000Z" title="9/14/2025, 3:08:00 AM">2025-09-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%98%E5%8F%A0%E8%87%AA%E8%A1%8C%E8%BD%A6/">折叠自行车</a></span><span class="level-item">38 分钟读完 (大约5729个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">自组折叠自行车</h1><div class="content"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几个月对折叠自行车比较感兴趣,通过视频,网络好友,配件卖家等渠道了解到了一些自组折叠自行车的相关知识</p>
+<p>写一篇博客记录分享一下</p>
+<blockquote>
+<p>这部分知识和组装折叠自行车强相关</p>
+<p>知识比较偏向于理论,并没有实践来验证</p>
+<p>强烈建议想要了解自组折叠车的朋友转到<strong>附表-配件简图</strong>先认识一下各个配件的样子</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="什么是折叠自行车"><a href="#什么是折叠自行车" class="headerlink" title="什么是折叠自行车"></a>什么是折叠自行车</h3><p>折叠自行车肯定是要能折叠的,不过也因为折叠属性,我目前没见过大轮径的折叠车</p>
+<p>折叠也分多种,两折叠比较常见,一般在大梁的位置可以折叠一次;也有三折叠,在一些小众名牌中</p>
+<p>只要能折叠,是自行车.我认为它被称作<strong>折叠自行车</strong>就是没有毛病的</p>
+<blockquote>
+<p>下面我着重介绍的折叠自行车是指带变速的类型</p>
+<p>以下两张图并非我的组装成果,来自山东某位网友</p>
+</blockquote>
+<p><img src="https://static.wuhunyu.top/images/2025/09/a2767e93ec0e65298e832c5f726dcb31.jpg" alt="骑行状态"></p>
+<p><img src="https://static.wuhunyu.top/images/2025/09/7852840d0caedea4b6c753cc8b92e55f.jpg" alt="折叠状态"></p>
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><h4 id="碳纤维"><a href="#碳纤维" class="headerlink" title="碳纤维"></a>碳纤维</h4><p>碳纤维是一种新工艺,其主要的成份是碳材料.制作好的成品一般具有不错的滤震能力,且重量相比于铝制来说也要轻不少,刚性也不错</p>
+<p>碳纤维在自行车领域在我看来是一种高级材料,你可以将车身的许多配件都找到它的制品.比如碳车架,碳前叉,碳车把,碳坐管,碳轮组,甚至碳坐垫,碳脚踏和碳盘片</p>
+<p>碳纤维的特点是轻和滤震,也具有不错的强度,但它比较脆,不像金属一样具有一定的延展性,受到强力的挤压会导致碳制零件断裂报废</p>
+<p>另外一点就是,碳纤维技术虽然在90年代就被发明了,但在工业化的现在,其成本依然高于钢制铝制材料</p>
+<h4 id="钛合金"><a href="#钛合金" class="headerlink" title="钛合金"></a>钛合金</h4><p>钛制品在很多领域都具有一种特殊的光环.比如钛制水杯</p>
+<p>基于钛金属本身的一些特性(耐腐蚀,重量相对钢制品较轻,强度高),在一小部分人群中,会追求钛车架</p>
+<p>但钛本身滤震性并不如碳,基于它的成本和碳都不是普通人愿意接受的价格,不推荐普通人接触这个东西</p>
+<h4 id="刚性"><a href="#刚性" class="headerlink" title="刚性"></a>刚性</h4><blockquote>
+<p>指的是自行车车架和各个部件在受力时抵抗形变（弯曲、扭曲）的能力</p>
+<p>以上发言来自 ai Gemini 2.5 pro</p>
+</blockquote>
+<p>什么是刚性呢?我简单理解为稳定性</p>
+<p>折叠车由于需要折叠,整个车架并不是一体的,比起传统的一体式车架,更需要考虑在暴力骑行中是否会出现车身晃动甚至散架的问题</p>
+<p>折叠车的刚性和车架的结构和材质关系比较大</p>
+<p>比如,<strong>大行 P8</strong>为了增加稳定性,在中轴和碗组的位置安装了一根叫马甲线的线材</p>
+<p>比如,蚂蚁腿车架使用了铬钼钢作为车架材料</p>
+<h3 id="整车品牌"><a href="#整车品牌" class="headerlink" title="整车品牌"></a>整车品牌</h3><blockquote>
+<p>虽然主要介绍的是组装,但了解一下整车也是很有必要的</p>
+<p>有一些不那么爱折腾的朋友,有一种途径是买整车然后再替换部分配件</p>
+<p>换下来的旧配件可以放闲鱼上卖.事实上也不少人是这么做的</p>
+</blockquote>
+<h4 id="大行-DAHON"><a href="#大行-DAHON" class="headerlink" title="大行(DAHON)"></a>大行(DAHON)</h4><p>这是个美国的品牌,在国内的折叠车领域也算得上是一把手了,比较有名的型号是<strong>大行 P8</strong></p>
+<img src="https://static.wuhunyu.top/images/2025/09/ed42484afae83738783755bbe499254c.png" alt="大行 P8" style="zoom:30%;" />
+
+<p>只看线上电商平台的渲染图,我更喜欢大行的另一个车型<strong>大行 K3 Plus</strong></p>
+<img src="https://static.wuhunyu.top/images/2025/09/6c14bcd3c3100b3e25d9d8cba2c8d2f3.png" alt="大行 K3 Plus" style="zoom:30%;" />
+
+<p>我在线下试骑过这个,但车店只有一辆二手的车型,车子骑起来特别软,刚性很差,导致我放弃了这个车型</p>
+<h4 id="燕鸥-Tern"><a href="#燕鸥-Tern" class="headerlink" title="燕鸥(Tern)"></a>燕鸥(Tern)</h4><p>这是牌子是从大行出来的员工新创立的牌子</p>
+<img src="https://static.wuhunyu.top/images/2025/09/25778a8b0303cb406f804be590e4df00.png" alt="燕鸥 B8" style="zoom:40%;" />
+
+<h3 id="配件"><a href="#配件" class="headerlink" title="配件"></a>配件</h3><p>按重要性来排序,各个大件我会这样排序</p>
+<ol>
+<li><p>车架</p>
+</li>
+<li><p>变速套件</p>
+</li>
+<li><p>内外胎</p>
+</li>
+<li><p>坐管</p>
+</li>
+<li><p>头管</p>
+</li>
+<li><p>刹车</p>
+</li>
+<li><p>轮组</p>
+</li>
+<li><p>车把</p>
+</li>
+<li><p>坐垫</p>
+</li>
+<li><p>其它</p>
+</li>
+</ol>
+<h4 id="车架"><a href="#车架" class="headerlink" title="车架"></a>车架</h4><blockquote>
+<p>折叠车的车架一般都是带前叉的</p>
+</blockquote>
+<p>自行车圈子有一句调侃的话是</p>
+<p>穷玩车架,富玩轮</p>
+<p>车架作为联通自行车各个部件的中间人,地位就像是电脑中的主板一样.有些人狠狠加料,有些人觉得够用就行</p>
+<p><img src="https://static.wuhunyu.top/images/2025/09/57cae7ed6c60b6843594b2439d6d843f.png" alt="蚂蚁腿车架"></p>
+<p>前面有说到,有部分朋友是买的整车然后改装,然后闲鱼出售旧的配件</p>
+<p>既然有出售配件的,当然也有平台车车架的.你也可以选择在闲鱼蹲一辆大行的拆车车架</p>
+<p>不过,二手产品的稳定性不那么好保证,如果有洁癖还是选择新购入吧</p>
+<p>车架方面,国内比较知名一些的车架平台有风行,科瑞斯(Crius),犀牛(EIOSIX)</p>
+<p>这里面,名声最大的是风行,这个品牌早期是给整车品牌大行做车架代工的.所以也有人会说风行的车架是盗版的</p>
+<p>车架也有几种不同的大类,我比较熟悉的有</p>
+<h5 id="K架"><a href="#K架" class="headerlink" title="K架"></a>K架</h5><p><img src="https://static.wuhunyu.top/images/2025/09/2d4096e1f0e75695daa28890e9d03ea4.png" alt="K架"></p>
+<h5 id="Y架"><a href="#Y架" class="headerlink" title="Y架"></a>Y架</h5><p><img src="https://static.wuhunyu.top/images/2025/09/0b16b75a92af279710ebdf3d0682d4af.png" alt="Y架"></p>
+<h5 id="海豚架"><a href="#海豚架" class="headerlink" title="海豚架"></a>海豚架</h5><p><img src="https://static.wuhunyu.top/images/2025/09/08a4e801e50d801ed9a0387cb110af4b.png" alt="海豚架"></p>
+<h5 id="蚂蚁架-蚂蚁腿"><a href="#蚂蚁架-蚂蚁腿" class="headerlink" title="蚂蚁架(蚂蚁腿)"></a>蚂蚁架(蚂蚁腿)</h5><p><img src="https://static.wuhunyu.top/images/2025/09/57cae7ed6c60b6843594b2439d6d843f.png" alt="蚂蚁腿"></p>
+<p>以上都是风行的几款车架,你更喜欢哪一款呢</p>
+<p>K架作为大行P8经典车型的同款车架,算是老大哥了</p>
+<p>Y架多一条横梁,是这四款车架中刚性最好的</p>
+<blockquote>
+<p>什么是刚性呢?我简单理解为稳定性</p>
+<p>折叠车由于折叠的特性,稳定性不如一体式车架</p>
+<p>对于大体重的人来说,骑折叠车或许不是一个好选择</p>
+</blockquote>
+<p>海豚架是最有特点的一个车架,整个车身像是一个已经跃出海面的海豚</p>
+<p>蚂蚁腿是我个人认为最漂亮的一款车架,电商平台把它归类到了复古风格的车架</p>
+<h5 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h5><p>再说说车架的材质</p>
+<p>风行的上述四个车架,除了蚂蚁腿是铬钼钢,其它的三款都是铝合金材质</p>
+<p>在自行车领域,材质比较多为铝合金材质,这个材质在工业化的现在易加工成本比较低,有较好的稳定性</p>
+<p>如果资金富裕,可以尝试进军碳纤维领域.富玩轮的轮说的就是碳纤维的轮组</p>
+<p>碳纤维有很好的避震性能,它本身也具有不错的刚性,更重要的是,相比于铝,碳纤维可以大大降低整车的重量</p>
+<p>还有钢架.一般而言,钢材是比较重的,折叠车为了加强车架的刚性,有些车型会选择铬钼钢作为车架材质,比如风行的蚂蚁腿车架</p>
+<p>最后还有一种很小众的车架,钛金属车架.这个材质的车架成本和高级碳纤维应该是大差不差的.都是有钱人的玩具.据车友自述,钛架的避震性能很差,而且重,普通玩家不建议入手</p>
+<h5 id="尺码"><a href="#尺码" class="headerlink" title="尺码"></a>尺码</h5><blockquote>
+<p>先下一个结论,折叠车并没有尺码这个说法,至少我没没见到同一款车型可以选择不同尺码的折叠车</p>
+</blockquote>
+<p>尺码在公路车,山地车,瓜车中出现的比较多</p>
+<p>下图是瓜车 骁风真挚 的车架尺码</p>
+<img src="https://static.wuhunyu.top/images/2025/09/71c597a10e63055dff5710bc378610d7.png" alt="骁风真挚" style="zoom: 33%;" />
+
+<p>但折叠车也不是完全没有尺码,只不过折叠车的尺码不同于公路车的尺码</p>
+<p>比如风行蚂蚁腿这个车架,有 <strong>FGD2018</strong> 和 <strong>FGD1618</strong> 两种</p>
+<p><strong>FGD2018</strong> 安装 20 英寸和 21 英寸的轮组,一般安装 20 英寸</p>
+<p><strong>FGD1618</strong> 安装 16 英寸和 17 英寸的轮组,一般安装 16 英寸</p>
+<p>这个尺码会直接影响你的其它配件</p>
+<h4 id="变速套件"><a href="#变速套件" class="headerlink" title="变速套件"></a>变速套件</h4><img src="https://static.wuhunyu.top/images/2025/09/61b8e29fd0f405fe32d0b6f0ad087618.png" alt="4700-1×10速中套件" style="zoom:50%;" />
+
+<h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><p>套件分为大中小大类</p>
+<blockquote>
+<p>它们包含的配件不一样,但具体包含了哪些配件没有统一的规定,甚至每个店家对于小中大套件的定义也是不一样的</p>
+<p>购买的时候需要注意套件中包含的配件</p>
+</blockquote>
+<p>下面给出一个示例,不一定标准</p>
+<table>
+<thead>
+<tr>
+<th>套件</th>
+<th>配件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小套件</td>
+<td>前拨 + 后拨 + 变速器 + 链条 + 飞轮</td>
+</tr>
+<tr>
+<td>中套件</td>
+<td>小套件 + 曲柄 + 牙盘 + 中轴</td>
+</tr>
+<tr>
+<td>大套件</td>
+<td>中套件 + 刹车碟片 + 刹把</td>
+</tr>
+</tbody></table>
+<p>自行车套件逃不过的一个品牌是禧玛诺(SHIMANO),国内还有顺泰,蓝图等厂商</p>
+<p>不过,据广大网友评价的结论,禧玛诺依旧还是第一梯队</p>
+<p>接下来只简单说说禧玛诺</p>
+<p>在公路车领域,禧玛诺有</p>
+<ol>
+<li>CLARIS</li>
+<li>SORA</li>
+<li>TIAGRA</li>
+<li>105</li>
+<li>ULTEGRA</li>
+<li>DURA-ACE</li>
+</ol>
+<p>这六个等级,品质级别从低到高,普通骑友的套件天花板是105.理由是105摸到了ULTEGRA的绝大多数体验,但性价比比ULTEGRA高很多,被称为专业入门的套件</p>
+<p>作为折叠车,我觉得上TIAGRA就行了</p>
+<blockquote>
+<p>如果你去自行车店购买自行车,店家宣称自己的车是禧玛诺的变速套件.希望你能询问老板自行车的哪些配件是禧玛诺,以及使用的是那个级别的禧玛诺套件</p>
+</blockquote>
+<p>为了有一个直观的感觉,我贴一个大概的价格</p>
+<blockquote>
+<p>价格表来源为淘宝,时间为 2025.09.14</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>禧玛诺套件</th>
+<th>价格 &#x2F; ¥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TIAGRA 4700 小套件(中腿后拨 + 变速器 + 链条 + 飞轮)</td>
+<td>410</td>
+</tr>
+<tr>
+<td>TIAGRA 4700 中套件(中腿后拨 + 变速器 + 链条 + 飞轮 + 曲柄 + 牙盘(1 x 10速) + 中轴)</td>
+<td>880</td>
+</tr>
+<tr>
+<td>105 R7120 小套件(前拨 + 后拨 + 手变 + 夹器)</td>
+<td>1,720</td>
+</tr>
+<tr>
+<td>105 R7120 中套件(前拨 + 后拨 + 手变 + 夹器 + 链条 + 飞轮 + 曲柄 + 牙盘(2 x 12速))</td>
+<td>2,350</td>
+</tr>
+</tbody></table>
+<h4 id="内外胎"><a href="#内外胎" class="headerlink" title="内外胎"></a>内外胎</h4><p>其实主要讲的是外胎,内胎可讲的不多</p>
+<h5 id="内胎"><a href="#内胎" class="headerlink" title="内胎"></a>内胎</h5><p>我知道的内胎材质有两种</p>
+<p>传统的几丁质材料 和 TPU塑料材质</p>
+<p>它们两的主要区别是</p>
+<table>
+<thead>
+<tr>
+<th>对比参数</th>
+<th>几丁质</th>
+<th>TPU</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>重量</td>
+<td>重</td>
+<td>很轻</td>
+</tr>
+<tr>
+<td>气密性</td>
+<td>好</td>
+<td>很差</td>
+</tr>
+<tr>
+<td>稳定性</td>
+<td>好</td>
+<td>很差</td>
+</tr>
+</tbody></table>
+<h5 id="外胎"><a href="#外胎" class="headerlink" title="外胎"></a>外胎</h5><p>先说说品牌</p>
+<p>世文(SCHWALBE): 在防刺方面做的比较出色. 大行P8 用到的大苹果胎(Big Apple)就出自这个平台</p>
+<p>德国马牌: 相对比较综合一些,防刺和竞速方面都不错</p>
+<p>对于公路车而言,为了竞速,公路车的外胎通常会做的比较细,且胎面较薄,轮胎的胎压也会比较高,这么做是为了降低轮胎的滚阻,让自行车的气动性更佳</p>
+<p>对于山地车而言,情况就不一样了,它们的轮胎一般又大又宽,胎面有很明显的花纹用来增加与地面的摩擦力,这么做是为了适应不同的路面环境</p>
+<p>公路车为了速度,轮胎会做的细窄且胎压较高,但代价是公路车的轮胎更适合在路况良好的路面,对于路况差的路面来说,公路车的轮胎往往更容易出现爆胎,避震性差的问题</p>
+<p>山地车为了适应性,轮胎做的又大又宽,代价是轮胎更重,滚阻更高</p>
+<p>对于折叠车如何选择,我想这因人而异</p>
+<p>但就像是在公路车和山地车之间,还有一种瓜车一样,多数折叠车的轮胎选择既不会像公路车那样激进,也不会像是山地车那样被要求适应复杂路况.所以我的选择是世文的马拉松plus系列</p>
+<h4 id="坐管"><a href="#坐管" class="headerlink" title="坐管"></a>坐管</h4><img src="https://static.wuhunyu.top/images/2025/09/7c7e8f0e3d2762e7268b57d5d042c026.png" alt="坐管" style="zoom:60%;" />
+
+<p>坐管是 ai 强烈推荐我换成碳纤维的配件之一,理由是它能低成本避震</p>
+<p>不过说是低成本,其实也是相对于碳前叉和碳车架来说</p>
+<p>不过说到碳坐管,除了它避震和重量轻的优点,也有个缺点,碳纤维坐管更容易出现滑落的问题.所以你可能要加配<strong>双层坐管夹</strong>以及增加摩擦性的<strong>止滑剂</strong></p>
+<p>个人推荐折叠车使用铝坐管即可</p>
+<h4 id="头管"><a href="#头管" class="headerlink" title="头管"></a>头管</h4><img src="https://static.wuhunyu.top/images/2025/09/96225a9b90711f2cf6c1778558e30f76.png" alt="鹅颈头管" style="zoom:50%;" />
+
+<p>折叠车的头管也是可以折叠的</p>
+<h5 id="折叠方式"><a href="#折叠方式" class="headerlink" title="折叠方式"></a>折叠方式</h5><p>按照折叠方式可以分为两种<strong>内折</strong>和<strong>外折</strong></p>
+<p>据说<strong>外折</strong>头管会更不容易磕碰到车架</p>
+<h5 id="拆卸方式"><a href="#拆卸方式" class="headerlink" title="拆卸方式"></a>拆卸方式</h5><p>按照拆卸方式,可以分为<strong>快拆</strong>,<strong>T型</strong>和<strong>双钉</strong></p>
+<ul>
+<li>快拆: 上图左一,左二,右三,右一都是快拆,意思是顶部有一个折叠扣可以徒手取下车把</li>
+<li>T型: 这个了解的不多</li>
+<li>双钉: 需要借助内六角扳手才能取下来车把,与它的安装和拆卸麻烦相比,稳定性要比快拆头管好不少</li>
+</ul>
+<h5 id="形状"><a href="#形状" class="headerlink" title="形状"></a>形状</h5><p>主要有两种形状,一种是上图这样弯弯的,叫<strong>鹅颈头管</strong></p>
+<p>还有一种更常见的直立头管</p>
+<img src="https://static.wuhunyu.top/images/2025/09/c93cd6981fe9dbfafde11e334712c981.png" alt="直立头管" style="zoom:40%;" />
+
+<h5 id="高度"><a href="#高度" class="headerlink" title="高度"></a>高度</h5><p>折叠自行车的坐管是很长的,可以自由调节,但头管的高度是不可变的,建议有条件可以先去一些自行车线下店(比如大行,迪卡侬等等)实际体验一下它们的整车并观察其头管的长度,寻找合适自己的高度</p>
+<p>与头管一样,车把的长度我也是推荐在线下实际体验之后再确定</p>
+<h4 id="刹车"><a href="#刹车" class="headerlink" title="刹车"></a>刹车</h4><h5 id="圈刹"><a href="#圈刹" class="headerlink" title="圈刹"></a>圈刹</h5><img src="https://static.wuhunyu.top/images/2025/09/3c45838b442fc12a064056382ed175c0.png" alt="圈刹" style="zoom:50%;" />
+
+<p>共享单车的刹车使用的就是这个</p>
+<p>相对于碟刹来说,无论是购买成本还是维护成本都更低,缺点是刹车的制动性能一般都是不如碟刹的</p>
+<h5 id="碟刹"><a href="#碟刹" class="headerlink" title="碟刹"></a>碟刹</h5><p>圈刹的刹车位置在轮组的轮圈上,碟刹的刹车位置在轮组轴承的碟片上</p>
+<img src="https://static.wuhunyu.top/images/2025/09/ec64a3d3ef07b3184b30d86b246ff9e6.png" alt="碟刹" style="zoom:50%;" />
+
+<p>碟刹也分多种</p>
+<h6 id="线拉碟"><a href="#线拉碟" class="headerlink" title="线拉碟"></a>线拉碟</h6><p>刹车的制动力通过拉动钢线来传导,有小部分人认为线拉碟调教得好甚至不逊于油碟</p>
+<h6 id="油碟"><a href="#油碟" class="headerlink" title="油碟"></a>油碟</h6><p>刹车的制动力通过压迫线管中的油来传导</p>
+<p>除了安装难度高,维护成本高,算是自行车领域刹车的王者</p>
+<p>油碟刹车会比圈刹制动更短,意味着捏刹车不能一下捏死,不然在快速行驶时容易轮胎抱死摔车</p>
+<h5 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h5><p>折叠车上推荐使用禧玛诺的 MT200油压碟刹 + 禧玛诺RT56油刹碟片</p>
+<p>至于为什么,问就是大家都这么选,性价比和功用性在折叠车上都拉满了,甚至性能过剩</p>
+<p>网上有传言说,折叠车上油刹维护成本高,因为折叠更容易导致油管漏油</p>
+<p>关于这个问题,我咨询过一个五年骑友,他自组的折叠车都是油压碟刹,我想问题应该没那么大</p>
+<h4 id="轮组"><a href="#轮组" class="headerlink" title="轮组"></a>轮组</h4><p>轮组我了解的不多</p>
+<blockquote>
+<p>需要注意的是,根据车架的尺寸(20英寸,16英寸比较常见)以及刹车系统(圈刹或者碟刹)的不同,选择的轮组也是不同的</p>
+</blockquote>
+<p>有一个有意思的轮组叫<strong>星芒轮组</strong>(下图左)</p>
+<img src="https://static.wuhunyu.top/images/2025/09/52d770c1f4e4a589faede59c66737cdb.png" alt="星芒轮组 - 左" style="zoom:40%;" />
+
+<p>说是辐条的形状像是一个五芒星一样,辐条的减少可见降低风阻,但也一定程度上降低轮组的可靠性</p>
+<p>另一个问题是星芒轮组会更贵一些</p>
+<h4 id="车把"><a href="#车把" class="headerlink" title="车把"></a>车把</h4><img src="https://static.wuhunyu.top/images/2025/09/f63607d7c72b92629a39405a1f639745.png" alt="车把" style="zoom:40%;" />
+
+<p>和坐管一样, ai 认为这是低成本换碳车把,可以在避震和重量上带来很大收益的配件</p>
+<p>我的建议是有钱可以上碳纤车把,预算吃紧还是用铝的吧</p>
+<h4 id="坐垫"><a href="#坐垫" class="headerlink" title="坐垫"></a>坐垫</h4><img src="https://static.wuhunyu.top/images/2025/09/5e6fff9348a45ac38d83a2b0256b08f8.png" alt="坐垫" style="zoom:35%;" />
+
+<p>很多坐垫都做了中空处理,女士我不清楚.对于男士而言,骑行的姿势使得前列腺一直处于压迫状态</p>
+<p>有过长时间骑车经验的男士小伙伴,应该都会感觉到下体发麻甚至短时间内没有知觉</p>
+<p>骑行圈处理这个问题主要是四大措施</p>
+<ol>
+<li>坐垫.像是图中的坐垫一样中间留空,减少压迫</li>
+<li>骑行裤.貌似是在裆部加了一层垫子</li>
+<li>铁锭.多骑多练,让身体慢慢适应</li>
+<li>换避震性能好的配件.比如碳车架,碳前叉甚至避震前叉等</li>
+</ol>
+<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><h5 id="脚踏"><a href="#脚踏" class="headerlink" title="脚踏"></a>脚踏</h5><p>脚踏按材质分类,有普通塑料的,尼龙塑料的,金属的</p>
+<p>我个人比较推荐尼龙塑料,金属虽然质感好,但折叠之后容易剐蹭到车身导致掉漆</p>
+<img src="https://static.wuhunyu.top/images/2025/09/7cefaab2a4b0b27a3fff90b80bbb5ab0.png" alt="尼龙脚踏" style="zoom:50%;" />
+
+<p>还有一种是快拆类型的脚踏,也就是说脚踏可以徒手拆卸下来</p>
+<p>不过这种脚踏会更重一些</p>
+<img src="https://static.wuhunyu.top/images/2025/09/bb0c02d41aa6803f7e227fc12e01a741.png" alt="快拆脚踏" style="zoom:40%;" />
+
+<h5 id="B柱前转换座"><a href="#B柱前转换座" class="headerlink" title="B柱前转换座"></a>B柱前转换座</h5><blockquote>
+<p>如果安装的是圈刹,就不需要这个小配件</p>
+</blockquote>
+<img src="https://static.wuhunyu.top/images/2025/09/1e50d6a12f92cd8759271314192274a9.png" alt="B柱前转换座" style="zoom:50%;" />
+
+<p>折叠车的车架前叉如果安装碟刹需要一个金属垫来垫高碟刹夹器</p>
+<p>注意后轮一般不需要</p>
+<h5 id="刹车线管套保护套-非必须"><a href="#刹车线管套保护套-非必须" class="headerlink" title="刹车线管套保护套(非必须)"></a>刹车线管套保护套(非必须)</h5><img src="https://static.wuhunyu.top/images/2025/09/7ef91a6439fb77a9d4908a9c5d1ca085.png" alt="刹车线管套保护套" style="zoom:40%;" />
+
+<p>用来束缚刹车线和变速线管的保护套,起到一个美观和保护的作用,可不用</p>
+<h3 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h3><h4 id="内六角扳手-必备"><a href="#内六角扳手-必备" class="headerlink" title="内六角扳手(必备)"></a>内六角扳手(必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/20730596d07b333ca87964b200d933a2.png" alt="内六角扳手" style="zoom:50%;" />
+
+<p>内六角属于是必备的工具,无论是安装还是维护,是比较常用的工具</p>
+<p>对于常用的工具,推荐买一套材质比较好的,避免滑丝或者断裂</p>
+<h4 id="苹果酱润滑脂-必备"><a href="#苹果酱润滑脂-必备" class="headerlink" title="苹果酱润滑脂(必备)"></a>苹果酱润滑脂(必备)</h4><blockquote>
+<p>业内人士称它为苹果酱大概率是因为颜色吧</p>
+</blockquote>
+<img src="https://static.wuhunyu.top/images/2025/09/12d1aa0d177868503cbb4fa5ba68ef91.png" alt="苹果酱润滑脂" style="zoom:30%;" />
+
+<p>功效就如同图里说的,几乎所有金属零件的连接出处都可以来上一点,可以达到防水,润滑的作用</p>
+<p>如果配件中还有碳纤维制品,还需要额外购买止滑剂增加摩擦力</p>
+<h4 id="打气筒-必备"><a href="#打气筒-必备" class="headerlink" title="打气筒(必备)"></a>打气筒(必备)</h4><p>无须解释,有压力表显示的更佳</p>
+<h4 id="链条截链器-必备"><a href="#链条截链器-必备" class="headerlink" title="链条截链器(必备)"></a>链条截链器(必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/01c6d4b773ec28feefe60ef7f821f5e5.png" alt="链条截链器" style="zoom:50%;" />
+
+<p>购买的链条一般都是偏长的,需要<strong>链条截链器</strong>截断几节链条之后通过魔术扣连接</p>
+<h4 id="魔术扣钳子-非必备"><a href="#魔术扣钳子-非必备" class="headerlink" title="魔术扣钳子(非必备)"></a>魔术扣钳子(非必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/9cf28af15fc54e202f64672df8050a91.png" alt="魔术扣钳子" style="zoom:50%;" />
+
+<p>链条使用魔术扣连接之后,需要通过这个工具来夹紧</p>
+<p>或者你也可以省略这个工具,通过大力踩踏脚踏让链条自然拉紧</p>
+<h4 id="卡飞套筒-必备"><a href="#卡飞套筒-必备" class="headerlink" title="卡飞套筒(必备)"></a>卡飞套筒(必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/3aafb9a364964b82ef7279ef2959b408.png" alt="卡飞套筒" style="zoom:50%;" />
+
+<p>安装飞轮的工具,需要配合扳手一起使用</p>
+<h4 id="活动扳手-必备"><a href="#活动扳手-必备" class="headerlink" title="活动扳手(必备)"></a>活动扳手(必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/39cc45effa9da2c22ba822228591e88a.png" alt="活动扳手" style="zoom:50%;" />
+
+<p>这家伙应该不会有人不认识吧</p>
+<h4 id="卡飞扳手-非必备"><a href="#卡飞扳手-非必备" class="headerlink" title="卡飞扳手(非必备)"></a>卡飞扳手(非必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/2fea8a3f96f9d0fe9b28e29703ded402.png" alt="卡飞扳手" style="zoom:50%;" />
+
+<p>这个工具需要配合<strong>卡飞套筒</strong>一起使用</p>
+<p>作用是用来固定飞轮.看到上面的链条了吗,使用链条卡住飞轮的齿轮以固定飞轮不转动</p>
+<p>这个工具在拆卸飞轮时才需要,安装飞轮的时候必须</p>
+<h4 id="中轴扳手-必备"><a href="#中轴扳手-必备" class="headerlink" title="中轴扳手(必备)"></a>中轴扳手(必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/fc67ca8f8e2824001ef2834984a5aeec.png" alt="中轴扳手" style="zoom:30%;" />
+
+<p>中轴扳手顾名思义是用来安装中轴的</p>
+<p>禧玛诺和浩盟的许多中轴都只需要这个工具就可以完成安装</p>
+<p>小部分中轴还需要用到<strong>中轴套筒</strong>,关于这一点可以向中轴的店家咨询是否需要<strong>中轴套筒</strong></p>
+<img src="https://static.wuhunyu.top/images/2025/09/b33e1b50056c013c37709ca5b2a7a659.png" alt="中轴套筒" style="zoom:50%;" />
+
+<h4 id="碗组压入工具-非必备"><a href="#碗组压入工具-非必备" class="headerlink" title="碗组压入工具(非必备)"></a>碗组压入工具(非必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/d722c5e65853c095ab3765eabf251711.webp" alt="碗组压入工具" style="zoom:50%;" />
+
+<blockquote>
+<p>购买车架的时候可以询问店家是否可以帮忙压入碗组(当然,你也需要在同一家店铺购买碗组),同意帮忙的话可以省下这个工具</p>
+</blockquote>
+<p>也有人大力出奇迹暴力压入碗组,只能说风险有点大,可能导致车架或者碗组报废</p>
+<h4 id="电工胶带-非必备"><a href="#电工胶带-非必备" class="headerlink" title="电工胶带(非必备)"></a>电工胶带(非必备)</h4><img src="https://static.wuhunyu.top/images/2025/09/2ba87da7e01898b3b8be74c624eff532.png" alt="电工胶带" style="zoom:40%;" />
+
+<p>电工胶带的作用有很多</p>
+<p>在安装刹车把和变速车把的时候,可以现在车把上缠一两圈胶带再固定安装刹车把和变速车把会更佳</p>
+<h3 id="个人组装配置单"><a href="#个人组装配置单" class="headerlink" title="个人组装配置单"></a>个人组装配置单</h3><blockquote>
+<p>配置单具有时效性,可能当你看到时已经过时,或者已经有更合适的配置</p>
+<p>同时也具有强主观性,选择某一个配件只因我的喜好</p>
+</blockquote>
+<h4 id="折叠自行车配置单"><a href="#折叠自行车配置单" class="headerlink" title="折叠自行车配置单"></a>折叠自行车配置单</h4><blockquote>
+<p>参考价格均来自 淘宝,时间为 2025.09.14</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>配件名称</th>
+<th>规格</th>
+<th>备注</th>
+<th>参考价格 &#x2F; ¥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>车架 风行FGD2018碟刹 蚂蚁架</td>
+<td>黑金</td>
+<td></td>
+<td>1247</td>
+</tr>
+<tr>
+<td>变速套件</td>
+<td>TIAGRA 4700小套件</td>
+<td></td>
+<td>395</td>
+</tr>
+<tr>
+<td>- 飞轮</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 指拨</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 后拨</td>
+<td></td>
+<td>28T飞轮短腿</td>
+<td></td>
+</tr>
+<tr>
+<td>- 链条</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>内外胎</td>
+<td></td>
+<td>数量 * 2</td>
+<td>213.4 * 2</td>
+</tr>
+<tr>
+<td>- 世文马拉松PLUS</td>
+<td>20*1.35</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- AV6美嘴内胎</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>坐管 MaxtroN美壮 Tower5</td>
+<td>黑色</td>
+<td></td>
+<td>86.2</td>
+</tr>
+<tr>
+<td>头管</td>
+<td>黑色-双钉外折(31.5cm)</td>
+<td>鹅颈头管</td>
+<td>172.66</td>
+</tr>
+<tr>
+<td>刹车</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 碟片 禧玛诺 RT56</td>
+<td>160mm * 2</td>
+<td></td>
+<td>80</td>
+</tr>
+<tr>
+<td>- 油刹 禧玛诺MT200油压碟刹</td>
+<td>油管长100-170cm</td>
+<td>购买前请咨询店家油管长度,避免不必要的截管</td>
+<td>185</td>
+</tr>
+<tr>
+<td>轮组 EIOSIX犀牛 中刀碟刹</td>
+<td>406 全黑色 * 2</td>
+<td>406 代表轮组的轮径,表示20英寸; 451 表示 21 英寸</td>
+<td>466.98</td>
+</tr>
+<tr>
+<td>车把 MaxtroN美壮Needle5</td>
+<td>黑色 25.4*500mm短直把</td>
+<td>车把长度建议线下体验之后解决</td>
+<td>74.8</td>
+</tr>
+<tr>
+<td>坐垫 SELLE ROYAL 自行车座垫</td>
+<td>treking旅行款</td>
+<td></td>
+<td>77.4</td>
+</tr>
+<tr>
+<td>脚踏 尼龙脚踏</td>
+<td>三培林脚踏 橘色</td>
+<td></td>
+<td>62.74</td>
+</tr>
+<tr>
+<td>中轴 + 曲柄 + 盘片 + 盘钉 prowheel浩盟</td>
+<td></td>
+<td>有没有盘钉需要执行咨询店家,没有需要额外购买</td>
+<td>189.38</td>
+</tr>
+<tr>
+<td>- 中轴</td>
+<td>中空</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 曲柄</td>
+<td>170曲柄</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 盘片</td>
+<td>52T盘片</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 盘钉</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>碗组 MaxtroN美壮</td>
+<td>红色</td>
+<td>也可以换成<strong>景晔</strong>的碗组.买前咨询店家是否可以帮忙压入碗组再发货</td>
+<td>68.6</td>
+</tr>
+<tr>
+<td>把套 美国ODI橡胶肉球</td>
+<td>红色</td>
+<td></td>
+<td>18.25</td>
+</tr>
+<tr>
+<td>碟刹转换座 禧玛诺</td>
+<td>160MM-B柱前转换座</td>
+<td></td>
+<td>10</td>
+</tr>
+<tr>
+<td>脚撑</td>
+<td>20寸黑色</td>
+<td>非必须</td>
+<td>48</td>
+</tr>
+<tr>
+<td>折叠自行车磁铁</td>
+<td></td>
+<td>非必须,折叠之后避免车架散开</td>
+<td>11.13</td>
+</tr>
+<tr>
+<td>刹车线管套保护套</td>
+<td>12mm红色 2米</td>
+<td>非必须,固定,美观刹车和变速线管</td>
+<td>24.1</td>
+</tr>
+<tr>
+<td>合计</td>
+<td></td>
+<td></td>
+<td><strong>3644.04</strong></td>
+</tr>
+</tbody></table>
+<h4 id="折叠自行车组装工具配置单"><a href="#折叠自行车组装工具配置单" class="headerlink" title="折叠自行车组装工具配置单"></a>折叠自行车组装工具配置单</h4><blockquote>
+<p>参考价格均来自 淘宝,时间为 2025.09.14</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>配件名称</th>
+<th>规格</th>
+<th>备注</th>
+<th>参考价格 &#x2F; ¥</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内六角扳手</td>
+<td>S2钢材</td>
+<td></td>
+<td>35</td>
+</tr>
+<tr>
+<td>苹果酱润滑脂</td>
+<td>50克</td>
+<td></td>
+<td>17.91</td>
+</tr>
+<tr>
+<td>打气筒</td>
+<td>气压表 + 多功能气针</td>
+<td>脚踩式</td>
+<td>30.9</td>
+</tr>
+<tr>
+<td>中轴扳手</td>
+<td>TL-BB01扳手</td>
+<td>注意与中轴的适配,请在购买前咨询店家是否适配你所购买的中轴</td>
+<td>25</td>
+</tr>
+<tr>
+<td>魔术扣钳子</td>
+<td></td>
+<td></td>
+<td>8.8</td>
+</tr>
+<tr>
+<td>链条截链器 + 卡飞套筒 + 卡飞扳手</td>
+<td></td>
+<td>只是安装可以不需要卡飞扳手,卡飞扳手只在拆卸时有用</td>
+<td>32</td>
+</tr>
+<tr>
+<td>碗组压入工具</td>
+<td>简约款</td>
+<td>非必须.购买车架时,请咨询店家是否可以帮忙压入碗组.可省略此工具</td>
+<td>28</td>
+</tr>
+<tr>
+<td>活动扳手</td>
+<td>10寸开口35mm</td>
+<td></td>
+<td>13.6</td>
+</tr>
+<tr>
+<td>电工胶带</td>
+<td>黑色1卷30米</td>
+<td>非必须</td>
+<td>3.9</td>
+</tr>
+<tr>
+<td>总计</td>
+<td></td>
+<td></td>
+<td><strong>195.11</strong></td>
+</tr>
+</tbody></table>
+<h3 id="附表"><a href="#附表" class="headerlink" title="附表"></a>附表</h3><h4 id="配件简图"><a href="#配件简图" class="headerlink" title="配件简图"></a>配件简图</h4><table>
+<thead>
+<tr>
+<th>配件</th>
+<th>简图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>车架</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/57cae7ed6c60b6843594b2439d6d843f.png" alt="车架" style="zoom:40%;" /></td>
+</tr>
+<tr>
+<td>前叉</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/ceaac5ebcaaa7081de8d4622e0ea9b1a.png" alt="前叉" style="zoom:35%;" /></td>
+</tr>
+<tr>
+<td>车把</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/f63607d7c72b92629a39405a1f639745.png" alt="车把" style="zoom:20%;" /></td>
+</tr>
+<tr>
+<td>把套</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/a3cb36d1e4d3af77d2ad49f0c8fb6b68.png" alt="把套" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>头管</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/0189f9e02d350b5e3079a3a56d3014b7.png" alt="头管" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>碗组</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/df2cdad235553fad9cb381e043f75693.png" alt="碗组" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>坐管</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/7c7e8f0e3d2762e7268b57d5d042c026.png" alt="坐管" style="zoom:35%;" /></td>
+</tr>
+<tr>
+<td>坐垫</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/5e6fff9348a45ac38d83a2b0256b08f8.png" alt="坐垫" style="zoom:35%;" /></td>
+</tr>
+<tr>
+<td>脚撑</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/924332c6012b4f196f7debde59715210.png" alt="脚撑" style="zoom:20%;" /></td>
+</tr>
+<tr>
+<td>脚踏</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/fd077e553262a5e438ae651b44b6830b.png" alt="脚踏" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>曲柄</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/09ced9b7798114a3cde090b836415a0f.png" alt="曲柄" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>链条</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/305a7afbccdf2505e4c3629553c15690.png" alt="链条" style="zoom:20%;" /></td>
+</tr>
+<tr>
+<td>飞轮</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/19c51e7a2e70202ba2597034fcba99eb.png" alt="飞轮" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>后拨</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/a310d3bf62841aebdebadeed5cfe5481.png" alt="后拨" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>指拨</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/011633bfe8086dcbe31d622073193565.png" alt="指拨" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>油刹</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/c49ac97eca09a9ea14478ab035102249.png" alt="油刹" style="zoom:20%;" /></td>
+</tr>
+<tr>
+<td>刹车片</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/6ef1a14b2cc8d2c7a7ffa69ef35daa84.png" alt="刹车片" style="zoom:17%;" /></td>
+</tr>
+<tr>
+<td>外胎</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/e0843c6010b006a4f253eb59c20d3b7e.png" alt="外胎" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>内胎</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/508f0dc01fa9c7e0b438362b934bba80.png" alt="内胎" style="zoom:35%;" /></td>
+</tr>
+<tr>
+<td>轮组</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/572c74d7ede93bd904d475207d3d4717.png" alt="轮组" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>碟刹转换座</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/7f73419d69d98dc0ae42a661392ba278.png" alt="碟刹转换座" style="zoom:25%;" /></td>
+</tr>
+<tr>
+<td>折叠自行车磁铁</td>
+<td><img src="https://static.wuhunyu.top/images/2025/09/aca166d1df1262486c95e30a5d9863be.png" alt="折叠自行车磁铁" style="zoom:25%;" /></td>
+</tr>
+</tbody></table>
+</div><div class="article-licensing box"><div class="licensing-title"><p>自组折叠自行车</p><p><a href="https://wuhunyu.top/bike/2025/09/14/bike/index.html">https://wuhunyu.top/bike/2025/09/14/bike/index.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>wuhunyu</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2025-09-14</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2025-09-14</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E8%87%AA%E7%BB%84/">自组</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://wuhunyu.top" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/ai/dart/2025/09/class-modifiers-for-apis/index.html"><span class="level-item">Class modifiers for API maintainers</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-2-tablet is-2-desktop is-2-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://static.wuhunyu.top/images/avatar-compress.png" alt="wuhunyu"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">wuhunyu</p><p class="is-size-6 is-block">有志者，事竟成</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>🐱喵星🐱</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">242</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">19</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">95</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/wuhunyu" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/wuhunyu"><i class="iconfont icon-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="LeetCode" href="https://leetcode.cn/u/wuhunyu"><i class="iconfont icon-likou"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wuhunyu@gmail.com"><i class="iconfont icon-a-031mail2"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">1</span><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#什么是折叠自行车"><span class="level-left"><span class="level-item">2</span><span class="level-item">什么是折叠自行车</span></span></a></li><li><a class="level is-mobile" href="#术语"><span class="level-left"><span class="level-item">3</span><span class="level-item">术语</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#碳纤维"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">碳纤维</span></span></a></li><li><a class="level is-mobile" href="#钛合金"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">钛合金</span></span></a></li><li><a class="level is-mobile" href="#刚性"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">刚性</span></span></a></li></ul></li><li><a class="level is-mobile" href="#整车品牌"><span class="level-left"><span class="level-item">4</span><span class="level-item">整车品牌</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#大行-DAHON"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">大行(DAHON)</span></span></a></li><li><a class="level is-mobile" href="#燕鸥-Tern"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">燕鸥(Tern)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#配件"><span class="level-left"><span class="level-item">5</span><span class="level-item">配件</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#车架"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">车架</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#K架"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">K架</span></span></a></li><li><a class="level is-mobile" href="#Y架"><span class="level-left"><span class="level-item">5.1.2</span><span class="level-item">Y架</span></span></a></li><li><a class="level is-mobile" href="#海豚架"><span class="level-left"><span class="level-item">5.1.3</span><span class="level-item">海豚架</span></span></a></li><li><a class="level is-mobile" href="#蚂蚁架-蚂蚁腿"><span class="level-left"><span class="level-item">5.1.4</span><span class="level-item">蚂蚁架(蚂蚁腿)</span></span></a></li><li><a class="level is-mobile" href="#材质"><span class="level-left"><span class="level-item">5.1.5</span><span class="level-item">材质</span></span></a></li><li><a class="level is-mobile" href="#尺码"><span class="level-left"><span class="level-item">5.1.6</span><span class="level-item">尺码</span></span></a></li></ul></li><li><a class="level is-mobile" href="#变速套件"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">变速套件</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#分类"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item">分类</span></span></a></li></ul></li><li><a class="level is-mobile" href="#内外胎"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">内外胎</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#内胎"><span class="level-left"><span class="level-item">5.3.1</span><span class="level-item">内胎</span></span></a></li><li><a class="level is-mobile" href="#外胎"><span class="level-left"><span class="level-item">5.3.2</span><span class="level-item">外胎</span></span></a></li></ul></li><li><a class="level is-mobile" href="#坐管"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">坐管</span></span></a></li><li><a class="level is-mobile" href="#头管"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">头管</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#折叠方式"><span class="level-left"><span class="level-item">5.5.1</span><span class="level-item">折叠方式</span></span></a></li><li><a class="level is-mobile" href="#拆卸方式"><span class="level-left"><span class="level-item">5.5.2</span><span class="level-item">拆卸方式</span></span></a></li><li><a class="level is-mobile" href="#形状"><span class="level-left"><span class="level-item">5.5.3</span><span class="level-item">形状</span></span></a></li><li><a class="level is-mobile" href="#高度"><span class="level-left"><span class="level-item">5.5.4</span><span class="level-item">高度</span></span></a></li></ul></li><li><a class="level is-mobile" href="#刹车"><span class="level-left"><span class="level-item">5.6</span><span class="level-item">刹车</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#圈刹"><span class="level-left"><span class="level-item">5.6.1</span><span class="level-item">圈刹</span></span></a></li><li><a class="level is-mobile" href="#碟刹"><span class="level-left"><span class="level-item">5.6.2</span><span class="level-item">碟刹</span></span></a></li><li><a class="level is-mobile" href="#推荐"><span class="level-left"><span class="level-item">5.6.3</span><span class="level-item">推荐</span></span></a></li></ul></li><li><a class="level is-mobile" href="#轮组"><span class="level-left"><span class="level-item">5.7</span><span class="level-item">轮组</span></span></a></li><li><a class="level is-mobile" href="#车把"><span class="level-left"><span class="level-item">5.8</span><span class="level-item">车把</span></span></a></li><li><a class="level is-mobile" href="#坐垫"><span class="level-left"><span class="level-item">5.9</span><span class="level-item">坐垫</span></span></a></li><li><a class="level is-mobile" href="#其它"><span class="level-left"><span class="level-item">5.10</span><span class="level-item">其它</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#脚踏"><span class="level-left"><span class="level-item">5.10.1</span><span class="level-item">脚踏</span></span></a></li><li><a class="level is-mobile" href="#B柱前转换座"><span class="level-left"><span class="level-item">5.10.2</span><span class="level-item">B柱前转换座</span></span></a></li><li><a class="level is-mobile" href="#刹车线管套保护套-非必须"><span class="level-left"><span class="level-item">5.10.3</span><span class="level-item">刹车线管套保护套(非必须)</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#安装工具"><span class="level-left"><span class="level-item">6</span><span class="level-item">安装工具</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#内六角扳手-必备"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">内六角扳手(必备)</span></span></a></li><li><a class="level is-mobile" href="#苹果酱润滑脂-必备"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">苹果酱润滑脂(必备)</span></span></a></li><li><a class="level is-mobile" href="#打气筒-必备"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">打气筒(必备)</span></span></a></li><li><a class="level is-mobile" href="#链条截链器-必备"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">链条截链器(必备)</span></span></a></li><li><a class="level is-mobile" href="#魔术扣钳子-非必备"><span class="level-left"><span class="level-item">6.5</span><span class="level-item">魔术扣钳子(非必备)</span></span></a></li><li><a class="level is-mobile" href="#卡飞套筒-必备"><span class="level-left"><span class="level-item">6.6</span><span class="level-item">卡飞套筒(必备)</span></span></a></li><li><a class="level is-mobile" href="#活动扳手-必备"><span class="level-left"><span class="level-item">6.7</span><span class="level-item">活动扳手(必备)</span></span></a></li><li><a class="level is-mobile" href="#卡飞扳手-非必备"><span class="level-left"><span class="level-item">6.8</span><span class="level-item">卡飞扳手(非必备)</span></span></a></li><li><a class="level is-mobile" href="#中轴扳手-必备"><span class="level-left"><span class="level-item">6.9</span><span class="level-item">中轴扳手(必备)</span></span></a></li><li><a class="level is-mobile" href="#碗组压入工具-非必备"><span class="level-left"><span class="level-item">6.10</span><span class="level-item">碗组压入工具(非必备)</span></span></a></li><li><a class="level is-mobile" href="#电工胶带-非必备"><span class="level-left"><span class="level-item">6.11</span><span class="level-item">电工胶带(非必备)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#个人组装配置单"><span class="level-left"><span class="level-item">7</span><span class="level-item">个人组装配置单</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#折叠自行车配置单"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">折叠自行车配置单</span></span></a></li><li><a class="level is-mobile" href="#折叠自行车组装工具配置单"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">折叠自行车组装工具配置单</span></span></a></li></ul></li><li><a class="level is-mobile" href="#附表"><span class="level-left"><span class="level-item">8</span><span class="level-item">附表</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#配件简图"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">配件简图</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/bike/2025/09/14/bike/index.html"><img src="https://static.wuhunyu.top/images/2025/09/fb928ca8b527a783c28b154d431a31f7.png" alt="自组折叠自行车"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-09-14T03:08:00.000Z">2025-09-14</time></p><p class="title"><a href="/bike/2025/09/14/bike/index.html">自组折叠自行车</a></p><p class="categories"><a href="/categories/%E6%8A%98%E5%8F%A0%E8%87%AA%E8%A1%8C%E8%BD%A6/">折叠自行车</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/ai/dart/2025/09/class-modifiers-for-apis/index.html"><img src="https://static.wuhunyu.top/images/2025/09/1ee45566cc4584db50f31250dfb0350b.jpg" alt="Class modifiers for API maintainers"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-09-11T10:59:00.000Z">2025-09-11</time></p><p class="title"><a href="/ai/dart/2025/09/class-modifiers-for-apis/index.html">Class modifiers for API maintainers</a></p><p class="categories"><a href="/categories/ai/">ai</a> / <a href="/categories/ai/dart/">dart</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/ai/dart/2025/09/class-modifiers/index.html"><img src="https://static.wuhunyu.top/images/2025/09/581fcb6acc144e9572507023f4065ca3.png" alt="Class modifiers"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-09-11T10:59:00.000Z">2025-09-11</time></p><p class="title"><a href="/ai/dart/2025/09/class-modifiers/index.html">Class modifiers</a></p><p class="categories"><a href="/categories/ai/">ai</a> / <a href="/categories/ai/dart/">dart</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/ai/dart/2025/09/constructors/index.html"><img src="https://static.wuhunyu.top/images/2025/09/d73fba611c6470968797efccef9d2fd3.jpg" alt="Constructors"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-09-10T10:57:00.000Z">2025-09-10</time></p><p class="title"><a href="/ai/dart/2025/09/constructors/index.html">Constructors</a></p><p class="categories"><a href="/categories/ai/">ai</a> / <a href="/categories/ai/dart/">dart</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/ai/dart/2025/09/classes/index.html"><img src="https://static.wuhunyu.top/images/2025/09/581fcb6acc144e9572507023f4065ca3.png" alt="Classes"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-09-09T10:52:00.000Z">2025-09-09</time></p><p class="title"><a href="/ai/dart/2025/09/classes/index.html">Classes</a></p><p class="categories"><a href="/categories/ai/">ai</a> / <a href="/categories/ai/dart/">dart</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Docker-Hub/"><span class="level-start"><span class="level-item">Docker Hub</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/GitHub-Actions/"><span class="level-start"><span class="level-item">GitHub Actions</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/LeetCode/"><span class="level-start"><span class="level-item">LeetCode</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"><span class="level-start"><span class="level-item">LeetCode每日一题</span></span><span class="level-end"><span class="level-item tag">208</span></span></a></li><li><a class="level is-mobile" href="/categories/MyBatis/"><span class="level-start"><span class="level-item">MyBatis</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ai/"><span class="level-start"><span class="level-item">ai</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/ai/dart/"><span class="level-start"><span class="level-item">dart</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/jvm/"><span class="level-start"><span class="level-item">jvm</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/mongodb/"><span class="level-start"><span class="level-item">mongodb</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/postgres/"><span class="level-start"><span class="level-item">postgres</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/spring-event/"><span class="level-start"><span class="level-item">spring event</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/spring-event/spring-transaction/"><span class="level-start"><span class="level-item">spring transaction</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/%E6%8A%98%E5%8F%A0%E8%87%AA%E8%A1%8C%E8%BD%A6/"><span class="level-start"><span class="level-item">折叠自行车</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%97%85%E6%B8%B8/"><span class="level-start"><span class="level-item">旅游</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%97%85%E6%B8%B8/%E8%B7%AF%E7%BA%BF%E8%A7%84%E5%88%92/"><span class="level-start"><span class="level-item">路线规划</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/%E7%A0%B4%E8%A7%A3/"><span class="level-start"><span class="level-item">破解</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"><span class="level-start"><span class="level-item">碎碎念</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9D%A2%E7%BB%8F/"><span class="level-start"><span class="level-item">面经</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DataGrip/"><span class="tag">DataGrip</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dijkstra-%E7%AE%97%E6%B3%95/"><span class="tag">Dijkstra 算法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker-Hub/"><span class="tag">Docker Hub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub-Actions/"><span class="tag">GitHub Actions</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GoLand/"><span class="tag">GoLand</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IntelliJ-IDEA/"><span class="tag">IntelliJ IDEA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JetBrains-%E5%85%A8%E5%AE%B6%E6%A1%B6/"><span class="tag">JetBrains 全家桶</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode-%E9%87%8C%E7%A8%8B%E7%A2%91/"><span class="tag">LeetCode 里程碑</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MyBatis/"><span class="tag">MyBatis</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo mb-2" href="/">wuhunyu · <a href="http://beian.miit.gov.cn/" target="_blank" style="display: inline-block">赣ICP备2022010426号</a></a><a class="is-block" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36070302361043" target="_blank">赣公网安备 36070302361043号</a><p class="is-size-7"><span class="is-size-7">© 2025 wuhunyu</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
