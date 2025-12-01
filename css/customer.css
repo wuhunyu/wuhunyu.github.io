@@ -10282,6 +10282,11 @@ body > .section {
     background: rgba(0,0,0,0.24);
   }
 }
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 .ml-0,
 .mx-0 {
   margin-left: 0 !important;
