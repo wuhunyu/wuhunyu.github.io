@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>2026 年第一次相亲 - wuhunyu|blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="wuhunyu"><meta name="msapplication-TileImage" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="wuhunyu"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="72x72" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="96x96" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="128x128" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="apple-touch-icon" sizes="256x256" href="https://static.wuhunyu.top/images/avatar-compress.png"><meta name="description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:type" content="blog"><meta property="og:title" content="2026 年第一次相亲"><meta property="og:url" content="https://wuhunyu.top/chat/2026/01/blind-date/index.html"><meta property="og:site_name" content="wuhunyu"><meta property="og:description" content="你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://static.wuhunyu.top/images/avatar-compress.png"><meta property="article:published_time" content="2026-01-03T02:34:00.000Z"><meta property="article:modified_time" content="2026-01-05T01:44:27.583Z"><meta property="article:author" content="wuhunyu"><meta property="article:tag" content="相亲"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://static.wuhunyu.top/images/avatar-compress.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://wuhunyu.top"},"headline":"有志者，事竟成","image":["https://static.wuhunyu.top/images/avatar-compress.png"],"datePublished":"2026-01-03T02:34:00.000Z","dateModified":"2026-01-05T01:44:27.583Z","author":{"@type":"Person","name":"wuhunyu"},"publisher":{"@type":"Organization","name":"wuhunyu|blog","logo":{"@type":"ImageObject","url":{"text":"wuhunyu"}}},"description":"你好，很高兴遇见你，我是 wuhunyu，一名 Java 开发。这是我的个人博客，我将会在这里分享自己的学习笔记"}</script><link rel="canonical" href="https://wuhunyu.top/chat/2026/01/blind-date/index.html"><link rel="alternate" href="/atom.xml" title="wuhunyu|blog" type="application/atom+xml"><link rel="icon" href="https://static.wuhunyu.top/images/avatar-compress.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet"><link rel="stylesheet" href="/css/customer.css"><link rel="stylesheet" href="/font/iconfont.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script type="module">
+                import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+                mermaid.initialize({
+                    startOnLoad: true,
+                    look: 'handDrawn',
+                    theme: 'base',
+                    themeVariables: {
+                        // 1. 普通节点配色 (淡橙色背景 + 橙色边框)
+                        primaryColor: '#FFF9E5',       
+                        primaryBorderColor: '#F4D03F', 
+                        primaryTextColor: '#333',
+                        
+                        // 2. 子图/分组配色 (淡蓝色背景 + 浅蓝色边框)
+                        clusterBkg: '#F4FAFF',         
+                        clusterBorder: '#AEC6CF',      
+                        
+                        // 3. 连线颜色
+                        lineColor: '#333',
+                        
+                        // 4. 辅助颜色
+                        secondaryColor: '#FFF9E5',
+                        tertiaryColor: '#FFF'
+                    }
+                });
+            </script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">wuhunyu</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/wuhunyu"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-10-tablet is-10-desktop is-10-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://static.wuhunyu.top/images/2026/01/b959657e72f83f98047934bc331e0e30.jpg" alt="2026 年第一次相亲"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2026-01-03T02:34:00.000Z" title="1/3/2026, 2:34:00 AM">2026-01-03</time>发表</span><span class="level-item"><time dateTime="2026-01-05T01:44:27.583Z" title="1/5/2026, 1:44:27 AM">2026-01-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%9B%B8%E4%BA%B2/">相亲</a></span><span class="level-item">20 分钟读完 (大约2936个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">2026 年第一次相亲</h1><div class="content"><p>今天是元旦节假日的第二天, 外面寒风凛冽, 气温还不到 10℃</p>
+<p>一天没出门了, 不过晚上有个约会, 这会儿我正在打理已经炸毛的头发</p>
+<span id="more"></span>
+
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>铃铃铃~, 是老妈打过来的微信电话</p>
+<p>“现在可以出发了”, 电话那头有点急切的声音</p>
+<p>今晚的约会是一个相亲饭局, 我了解到的相亲对象(下面统一叫“女方”)那边的信息不多</p>
+<ol>
+<li>比我小 2 岁</li>
+<li>元旦父母没空, 元旦第二天要上班, 所以约的是元旦第二天的晚上</li>
+<li>在老家上班</li>
+</ol>
+<p>从上面的消息中, 我猜测是在老家上的一个比较忙的工作, 元旦只有一天假期</p>
+<p>老妈传递的信息缺失的很厉害, 不过也不是第一次了</p>
+<p>父辈们安排的见面, 如果不太费时费钱的话, 就顺着他们的意思去做吧, 这样也能少些吵架</p>
+<p>再加上, 我的年纪也不少了, 确实该考虑结婚的事情了</p>
+<p>不过, 我是在外地上班, 元旦的第三天中午就要去赶火车, 女方假期这么少的话, 很难有后续, 本身也是异地恋</p>
+<p>“走啊”, 老爸还在家里等我</p>
+<p>“马上”, 我知道老妈交代老爸出门带一些现金, 肯定是要给女方那边红包的</p>
+<h3 id="出门"><a href="#出门" class="headerlink" title="出门"></a>出门</h3><p>饭局的馆子是我家定好的, 离我家不太远, 一公里的样子</p>
+<p>有一瞬间想过要不要骑车去, 万一饭局完了之后需要带女方出去玩呢, 不过这个想法马上就被迎面的冷风吹散了</p>
+<p>“到了没有?”, 老妈在我们赶路的时候又打了一遍老爸的电话</p>
+<p>刚好我们到了饭馆的门口, 一对中年夫妇在门口等着, 我暗猜这就是女方的家属</p>
+<h3 id="等待"><a href="#等待" class="headerlink" title="等待"></a>等待</h3><p>定的饭局在二楼, 老爸和我上楼之后, 就把楼下站着的女方爸妈叫了上来</p>
+<p>女方的爸妈都是很健谈的人</p>
+<p>女方爸妈, 中介, 我爸妈聊天这会儿, 我把碗筷用热茶水冲洗了一遍, 然后挨个倒茶</p>
+<p>等待女方本人来的时间, 基本都是这些老一辈的人在聊天, 我本身不算是一个话少的人, 但这个场合, 我还是安静一些比较合适, 过度地表现自我会让我怀疑这个正在表现自己的人还是自己吗</p>
+<p>等待的时间很无聊, 把在场人的碗筷都洗了一遍之后, 看哪个长辈的被子快没茶了, 我就去满上</p>
+<h3 id="吃饭"><a href="#吃饭" class="headerlink" title="吃饭"></a>吃饭</h3><p>女方也到齐了, 老妈通知厨房开始做菜</p>
+<p>虽然一开始就有预期了, 但全部的人都到齐之后, 人还真不少, 我家 3 个人, 两个中介, 女方家里那边来了 5 个人, 如果算上女方姐姐的两个婴儿, 一共 12 个人</p>
+<p>一张大圆桌, 坐满了人, 还是挺壮观的, 这个热闹程度在我家这种四口之家不多见</p>
+<p>女方来了之后, 就在帮她姐姐给婴儿喂奶</p>
+<p>我和她是这场饭局的主要人物</p>
+<p>我喵了女方一眼, 挺高的, 比起我的偏瘦的脸型来说, 她的脸型会显得更大一些, 脸上还有几颗痘痘印, 还在我的审美范围内</p>
+<p>我本身长相很一般的人, 自我评价中下吧, 再加上裸身高 164 cm, 对自己相亲能找到的对象有一个基本的认知</p>
+<p>我给女方姐妹俩倒了两杯白开水, 年轻人应该都不喜欢喝茶水</p>
+<p>吃饭期间, 我从父辈们的谈话之间了解更多的信息</p>
+<ol>
+<li>女方姐姐和我同岁</li>
+<li>女方本人比我小 5 岁</li>
+<li>女方在家里做会计</li>
+<li>女方元旦有三天假</li>
+</ol>
+<p>和我之前了解的信息有出路</p>
+<p>差 5 岁的话, 老实说, 我有点想要退缩了</p>
+<p>虽然网友们经常说要找 18 岁的妹妹, 但我自我怀疑: 自己比人家大这么多, 人家为什么会接受和一个老帮菜做男朋友甚至结婚呢</p>
+<ol>
+<li>有钱</li>
+<li>有颜</li>
+<li>能提供情绪价值</li>
+</ol>
+<p>这三点我都没有, 所以我很清楚自己的定位</p>
+<p>如果想要找一个一起度过后半生的对象, 小 5 岁有些不太现实了</p>
+<p>她等得起, 我也没多少时光就步入 30 大关了</p>
+<p>我个人的期望是 ±2, 不过经历过社会磨砺的人, 对另一半的期望都会更偏向于现实条件, 感性会少一些</p>
+<p>我为什么会想要步入结婚大军, 扪心自问</p>
+<ol>
+<li>想要体验一下男女之事</li>
+<li>看到别的情侣, 也会想如果不是一个人会不会过的更幸福</li>
+<li>身边的同学朋友一个一个走进了婚姻</li>
+<li>父母催婚</li>
+</ol>
+<p>父母的压力其实是最小的, 所以我并不反对老妈安排的相亲, 因为我的圈子里基本遇不到适龄的未婚女性</p>
+<p>我反对的是父母把这次相亲办成了两家人见面. 这没必要, 还费钱, 成功率也不高</p>
+<p>我正犹豫着找个机会约女方出去单独聊一聊</p>
+<h3 id="聊"><a href="#聊" class="headerlink" title="聊"></a>聊</h3><p>中介站出来叫我约女方出去走一走</p>
+<p>顺水推舟, 饭局上, 女方的爸爸出去了抽烟, 我向女方的妈妈说了声“那我带你女儿出去聊一会儿”, 就邀请女方出去玩了</p>
+<p>我原本的计划是, 先自我介绍, 然后再问下是否有意向相处下去</p>
+<p>女方回答的有点模糊, 但也表达了自己还早, 可能以后也不想结婚</p>
+<p>我问, “你是第一次参加相亲吗?”</p>
+<p>她答, “不算是第一次吧”</p>
+<p>其实她说没想法的那一刻, 我也没啥好了解的了. 我不是一个死缠烂打的人, 如果对方没有一点想法的话, 即便我能通过契而不舍地追求得到这个婚姻, 但这样取得的婚姻到底会不会是幸福的呢</p>
+<p>后面的聊天就有些尴尬了, 下来的时候长辈还起哄说要加微信, 然后第二天早上还能约一起见个面</p>
+<p>我直接摊牌了, “既然你没有想法, 那我们就不用加微信了”</p>
+<p>我觉得有时候决绝一点是对两边的负责</p>
+<p>在外面转了一圈, 我们就准备回去了</p>
+<p>进饭馆的门之前, 女方问我, “如果长辈们问起来没加微信怎么办?”</p>
+<p>我也犹豫了, 我知道穿帮肯定是迟早的事</p>
+<p>从口袋摸出来手机, 摆弄了一会儿终究还是没有说出来加微信</p>
+<h3 id="返回饭局"><a href="#返回饭局" class="headerlink" title="返回饭局"></a>返回饭局</h3><p>上楼之后, 爸妈都不在. 此时我还没意识到他们去做什么了</p>
+<p>我重新坐回座位, 女方的父亲和我聊起来他以前在深圳时候的一些事情</p>
+<p>物是人非, 他说的很多地方名, 我是没听说过的, 不过和这些长辈聊一聊这些也挺好的, 如果话题又扯到了相亲上, 我也不一定能接得住</p>
+<p>和女方的父亲聊了好一会儿, 我靠近女方, 和她说, “你爸爸还是很热情的, 加油抗争”, 不知道她听清楚了没</p>
+<p>之后听见老妈的声音, 我就起身出去. 老妈直接塞了一个红包给我, 说是要给女方</p>
+<p>边上除了老妈还有其他人在, 一时之间我没好意思说我们已经结束了</p>
+<p>半推半就下, 我还是把红包给了女方</p>
+<p>女方估计也是第一次见这种场面, 推脱了几次, 在身边人的起哄下接受了红包</p>
+<p>这会儿没加到女方微信, 连悄悄话都没机会说了</p>
+<p>女方的父母都没说什么, 也是很期望能成一家人吧</p>
+<p>红包发完, 也差不多该结束了</p>
+<p>女方的姐姐两个婴儿回去不方便, 饭局上有人提议我家开车送她们回去</p>
+<p>于是我一个人回家拿钥匙去取车</p>
+<h3 id="取车"><a href="#取车" class="headerlink" title="取车"></a>取车</h3><p>路上我在想, 不能一错再错了, 一会儿回去, 问一下女方的想法, 要不要当场说明我们没想法继续下去</p>
+<h3 id="沉默"><a href="#沉默" class="headerlink" title="沉默"></a>沉默</h3><p>取车回来之后, 女方正在和她姐姐逗小孩玩</p>
+<p>我靠近她, 说了声, “要不要现在说出来”</p>
+<p>她回了我一句, 但我没听清楚是什么</p>
+<p>沉默</p>
+<p>我想起来让子弹飞有句台词, “哭, 哭也算时间哦”</p>
+<p>此刻, “沉默也算是做出了决定”, 是对我的写照</p>
+<p>很快, 我们就各回各家了</p>
+<h3 id="责怪"><a href="#责怪" class="headerlink" title="责怪"></a>责怪</h3><p>老妈说我为什么不和女方招呼说拜拜</p>
+<p>这会儿只有中介和老妈在, 我也瞒不住, 直接说已经凉了</p>
+<p>老妈的表情瞬间变了</p>
+<p>中介说, “你在微信上和人家再聊一聊, 男生要脸皮厚一点”</p>
+<p>我说没加微信, 那会儿中介和老妈觉得天都塌了</p>
+<p>我和她们解释再多都没用, 中介说她问女方父母要女方的电话, 然后我再加她的微信</p>
+<p>中介说她自己, 21 岁时她老公见面的第二天就直接跑她家里去找她了</p>
+<p>我很想说现在的恋爱和她们那时候不一样了, 但无法说服她们</p>
+<h3 id="加微信"><a href="#加微信" class="headerlink" title="加微信"></a>加微信</h3><p>已经是晚上九点半了</p>
+<p>我加了女方的微信, 说我这边失守了</p>
+<p>再加微信, 我的感受也是很复杂</p>
+<p>再次询问了是否还有机会, 我还有一上午在老家</p>
+<p>女方回复说, “她想要睡懒觉”</p>
+<p>我觉得如果对一个人有一点想法, 即便说了要睡懒觉, 也会表达可以几点之后约见面吧, 更何况我已经表明了自己隔天下午就要去赶火车</p>
+<p>事已至此, 我直接问, “那我就理解为拒绝了哈”</p>
+<p>成年人之间沟通真的没必要扭扭捏捏, 这是在相亲, 而不是在谈恋爱, 我作为男方需要确认对方也有意向才能迈出下一步</p>
+<h3 id="老爸老妈"><a href="#老爸老妈" class="headerlink" title="老爸老妈"></a>老爸老妈</h3><p>老一辈的观念是, 人家女孩子不可能来追我, 需要我主动一些, 不要因为一点挫折就放弃, 我也不小了, 要抓住机会</p>
+<p>我寻思着, 我并没有反对相亲, 也不是不想配合老爸老妈的安排</p>
+<p>问题是在明确得知对方没有意向向后发展的前提下, 我还挂着一个异地恋的 debuff, 真没必要硬追</p>
+<p>如果当时, 女方说有想法向后发展, 或者她说可以试试, 我都不可能不加人家微信</p>
+<p>我希望我的婚姻不是单纯地因为物质条件而走到了一起</p>
+<h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3><p>我向老爸老妈表明了微信上的聊天结果, 他们还是希望能继续推进</p>
+<p>老实说, 我已经不再去想打扰对方了</p>
+<p>算上微信上的答复, 我算不算已经被拒绝了两次</p>
+<p>强扭的瓜不甜, 虽然两方的家长都很积极想要推进关系, 我家里也没什么财产好继承, 不想给自己加以后离婚的风险</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>2026 年第一次相亲</p><p><a href="https://wuhunyu.top/chat/2026/01/blind-date/index.html">https://wuhunyu.top/chat/2026/01/blind-date/index.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>wuhunyu</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2026-01-03</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2026-01-05</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%9B%B8%E4%BA%B2/">相亲</a></div><div class="sharethis-inline-share-buttons"></div><script src="https://wuhunyu.top" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/marathon/2025/12/29/huizhou/index.html"><span class="level-item">记第一次半程马拉松</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-2-tablet is-2-desktop is-2-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="https://static.wuhunyu.top/images/avatar-compress.png" alt="wuhunyu"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">wuhunyu</p><p class="is-size-6 is-block">有志者，事竟成</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>🐱喵星🐱</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">28</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">45</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/wuhunyu" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/wuhunyu"><i class="iconfont icon-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="LeetCode" href="https://leetcode.cn/u/wuhunyu"><i class="iconfont icon-likou"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wuhunyu@gmail.com"><i class="iconfont icon-a-031mail2"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="iconfont icon-rss"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#准备"><span class="level-left"><span class="level-item">1</span><span class="level-item">准备</span></span></a></li><li><a class="level is-mobile" href="#出门"><span class="level-left"><span class="level-item">2</span><span class="level-item">出门</span></span></a></li><li><a class="level is-mobile" href="#等待"><span class="level-left"><span class="level-item">3</span><span class="level-item">等待</span></span></a></li><li><a class="level is-mobile" href="#吃饭"><span class="level-left"><span class="level-item">4</span><span class="level-item">吃饭</span></span></a></li><li><a class="level is-mobile" href="#聊"><span class="level-left"><span class="level-item">5</span><span class="level-item">聊</span></span></a></li><li><a class="level is-mobile" href="#返回饭局"><span class="level-left"><span class="level-item">6</span><span class="level-item">返回饭局</span></span></a></li><li><a class="level is-mobile" href="#取车"><span class="level-left"><span class="level-item">7</span><span class="level-item">取车</span></span></a></li><li><a class="level is-mobile" href="#沉默"><span class="level-left"><span class="level-item">8</span><span class="level-item">沉默</span></span></a></li><li><a class="level is-mobile" href="#责怪"><span class="level-left"><span class="level-item">9</span><span class="level-item">责怪</span></span></a></li><li><a class="level is-mobile" href="#加微信"><span class="level-left"><span class="level-item">10</span><span class="level-item">加微信</span></span></a></li><li><a class="level is-mobile" href="#老爸老妈"><span class="level-left"><span class="level-item">11</span><span class="level-item">老爸老妈</span></span></a></li><li><a class="level is-mobile" href="#第二天"><span class="level-left"><span class="level-item">12</span><span class="level-item">第二天</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/chat/2026/01/blind-date/index.html"><img src="https://static.wuhunyu.top/images/2026/01/b959657e72f83f98047934bc331e0e30.jpg" alt="2026 年第一次相亲"></a></figure><div class="media-content"><p class="date"><time dateTime="2026-01-03T02:34:00.000Z">2026-01-03</time></p><p class="title"><a href="/chat/2026/01/blind-date/index.html">2026 年第一次相亲</a></p><p class="categories"><a href="/categories/%E7%9B%B8%E4%BA%B2/">相亲</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/marathon/2025/12/29/huizhou/index.html"><img src="https://static.wuhunyu.top/images/2025/12/1f1e577fe029ca97dd3ebbf566a71522.jpg" alt="记第一次半程马拉松"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-12-29T10:13:00.000Z">2025-12-29</time></p><p class="title"><a href="/marathon/2025/12/29/huizhou/index.html">记第一次半程马拉松</a></p><p class="categories"><a href="/categories/%E9%A9%AC%E6%8B%89%E6%9D%BE/">马拉松</a> / <a href="/categories/%E9%A9%AC%E6%8B%89%E6%9D%BE/%E5%8D%8A%E7%A8%8B%E9%A9%AC%E6%8B%89%E6%9D%BE/">半程马拉松</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/chat/2025/12/acme-sh/index.html"><img src="https://static.wuhunyu.top/images/2025/12/ddf5995fb9b1b3c580eed8e808427c3a.png" alt="记一次域名证书自动续签"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-12-19T10:19:00.000Z">2025-12-19</time></p><p class="title"><a href="/chat/2025/12/acme-sh/index.html">记一次域名证书自动续签</a></p><p class="categories"><a href="/categories/domain/">domain</a> / <a href="/categories/domain/ssl-cert/">ssl cert</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/chart/2025/12/01/mermaid/index.html"><img src="https://static.wuhunyu.top/images/2025/12/c0f63c86b515122fbce3496a2153801d.png" alt="Mermaid 简单使用与实践"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-12-01T08:59:00.000Z">2025-12-01</time></p><p class="title"><a href="/chart/2025/12/01/mermaid/index.html">Mermaid 简单使用与实践</a></p><p class="categories"><a href="/categories/chart/">chart</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/java/2025/11/17/jackson-mixin/index.html"><img src="https://static.wuhunyu.top/images/2025/11/be8f1c0759a95e6f49f6f5df7cdcd9a1.jpg" alt="jackson mixin 特性简单应用"></a></figure><div class="media-content"><p class="date"><time dateTime="2025-11-17T10:14:00.000Z">2025-11-17</time></p><p class="title"><a href="/java/2025/11/17/jackson-mixin/index.html">jackson mixin 特性简单应用</a></p><p class="categories"><a href="/categories/java/">java</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Docker-Hub/"><span class="level-start"><span class="level-item">Docker Hub</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/GitHub-Actions/"><span class="level-start"><span class="level-item">GitHub Actions</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/MultipartFile/"><span class="level-start"><span class="level-item">MultipartFile</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/MultipartFile/%E6%B5%81/"><span class="level-start"><span class="level-item">流</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/MyBatis/"><span class="level-start"><span class="level-item">MyBatis</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ai/"><span class="level-start"><span class="level-item">ai</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/chart/"><span class="level-start"><span class="level-item">chart</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/domain/"><span class="level-start"><span class="level-item">domain</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/domain/ssl-cert/"><span class="level-start"><span class="level-item">ssl cert</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/jvm/"><span class="level-start"><span class="level-item">jvm</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/linux/"><span class="level-start"><span class="level-item">linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/mongodb/"><span class="level-start"><span class="level-item">mongodb</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/oss/"><span class="level-start"><span class="level-item">oss</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/spring-event/"><span class="level-start"><span class="level-item">spring event</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/spring-event/spring-transaction/"><span class="level-start"><span class="level-item">spring transaction</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/%E6%8A%98%E5%8F%A0%E8%87%AA%E8%A1%8C%E8%BD%A6/"><span class="level-start"><span class="level-item">折叠自行车</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%9B%B8%E4%BA%B2/"><span class="level-start"><span class="level-item">相亲</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A0%B4%E8%A7%A3/"><span class="level-start"><span class="level-item">破解</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"><span class="level-start"><span class="level-item">碎碎念</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">算法</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9D%A2%E7%BB%8F/"><span class="level-start"><span class="level-item">面经</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%A9%AC%E6%8B%89%E6%9D%BE/"><span class="level-start"><span class="level-item">马拉松</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E9%A9%AC%E6%8B%89%E6%9D%BE/%E5%8D%8A%E7%A8%8B%E9%A9%AC%E6%8B%89%E6%9D%BE/"><span class="level-start"><span class="level-item">半程马拉松</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/DataGrip/"><span class="tag">DataGrip</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Docker-Hub/"><span class="tag">Docker Hub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub-Actions/"><span class="tag">GitHub Actions</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GoLand/"><span class="tag">GoLand</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IntelliJ-IDEA/"><span class="tag">IntelliJ IDEA</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JetBrains-%E5%85%A8%E5%AE%B6%E6%A1%B6/"><span class="tag">JetBrains 全家桶</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MyBatis/"><span class="tag">MyBatis</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VisualVM/"><span class="tag">VisualVM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WebStorm/"><span class="tag">WebStorm</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo mb-2" href="/">wuhunyu · <a href="http://beian.miit.gov.cn/" target="_blank" style="display: inline-block">赣ICP备2022010426号</a></a><a class="is-block" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36070302361043" target="_blank">赣公网安备 36070302361043号</a><p class="is-size-7"><span class="is-size-7">© 2025 wuhunyu</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p style="align-items: center; line-height: 28px;">本网站由<a style="margin: 0 2px" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer"><img style="height: 28px;" src="/images/upyun.png" alt="又拍云"></a>提供CDN加速/云存储服务</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script defer src="https://events.vercount.one/js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://wuhunyu.top",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.css"><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/katex.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/auto-render.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/KaTeX/0.15.1/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdnjs.loli.net/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
