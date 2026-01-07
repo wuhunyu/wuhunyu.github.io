@@ -10287,6 +10287,31 @@ body > .section {
   justify-content: center;
   margin: 0 auto;
 }
+.waterfall-container {
+  column-count: 3; /* 默认显示 3 列 */
+  column-gap: 10px; /* 图片之间的间距 */
+  width: 100%;
+}
+.waterfall-container img {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px; /* 垂直间距 */
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+.waterfall-container img:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 768px) {
+  .waterfall-container {
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .waterfall-container {
+    column-count: 1;
+  }
+}
 .ml-0,
 .mx-0 {
   margin-left: 0 !important;
